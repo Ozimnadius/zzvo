@@ -4,5 +4,79 @@ block variables
     - var title = 'Главная'
 
 block content
-    h1 Страничка "Главная"
-        +icon('001-twitter', 'svg')
+    main.index
+        //- banner
+        section.index__banner
+            div(style='background-image: url(/images/content/main/banner/bg.jpg)').banner
+                .container.banner__container
+                    .banner__title  Современное производство вентиляционного оборудования
+                    .banner__sub Надёжный производитель вентиляционного оборудования в России
+                    a(href='/').banner__link.button.button_wh ПОДРОБНЕЕ
+                    .banner__list
+                        .row.banner__row
+                            .banner__item
+                                .banner__item-num= '01.'
+                                .banner__item-title
+                                    | Высокотехнологичное
+                                    br
+                                    | производство
+                            .banner__item
+                                .banner__item-num= '02.'
+                                .banner__item-title
+                                    | 16 лет успешной
+                                    br
+                                    | работы
+                            .banner__item
+                                .banner__item-num= '03.'
+                                .banner__item-title
+                                    | Комплексный
+                                    br
+                                    | подход к поставкам
+                            .banner__item
+                                .banner__item-num= '04.'
+                                .banner__item-title
+                                    | Поддержка
+                                    br
+                                    | проектировщиков
+        //- catalog
+        section.index__cat
+            .mcat
+                .container.mcat__container
+                    .mcat__title.title Продукция
+                    .mcat__list
+                        .row.mcat__row
+                            each i,x in mcat
+                                a(href='/').mcat__item
+                                    img(src='images/content/main/catalog/'+(x+1)+'.jpg').mcat__item-img
+                                    .mcat__item-title
+                                        != i
+        //- news
+        section.index__news
+            .mnews
+                .container.mnews__container
+                    .mnews__title.title Новости
+                    .mnews__left
+                        .mnews__main
+                            .mnews__main-img
+                                img(src='images/content/main/news/img.jpg').mnews__main-pic
+                            .mnews__main-content.content
+                                p С 19 сентября 2018 года изменяются цены на нашу продукцию. Вы можете
+                                    br
+                                    a(href='/' download=true) Скачать прайс
+                            .mnews__main-date 21 марта в 19:37
+
+
+                    .mnews__right
+                        .mnews__list
+                            each r in [1,2]
+                                .mnews__row
+                                    .row
+                                        each i in [1,2]
+                                            .mnews__item
+                                                a(href='/').mnews__item-link Режим работы завода в мае 2017г. Производство и склад начинают работать с 10 мая 2017г.
+                                                .mnews__item-date 21 марта в 19:37
+
+
+                    a(href='/').mnews__link читать все новости
+
+

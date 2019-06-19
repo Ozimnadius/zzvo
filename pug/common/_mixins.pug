@@ -1,6 +1,25 @@
 mixin icon(iconName, iconClass)
-  svg(class=`${iconClass}`)
-    use(xlink:href=`/images/icons/sprite.svg#${iconName}`)
+    svg(class=`${iconClass}`)
+        use(xlink:href=`/images/icons/sprite.svg#${iconName}`)
 
 mixin image(imagePath, imageAlt, imageClass)
-  img(src=`/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
+    img(src=`/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
+
+mixin select(arr, name)
+    select(name=name).param__val.select
+        each i in arr
+            option(value=i)= i
+
+mixin checks (arr, name)
+    .checks
+        each i in arr
+            label.check
+                input(type='checkbox' name=name value=i)
+                .check__fake= i
+
+mixin radios (arr, name)
+    .radios
+        each i in arr
+            label.radio
+                input(type='radio' name=name value=i).radio__input
+                .radio__fake= i

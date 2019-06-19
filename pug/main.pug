@@ -14,23 +14,28 @@ html(lang="ru")
         link(rel='stylesheet' href='css/main.css')
     body
         .wrapper
-            //- header
-            header.header
-                //- aside
-                aside.header__aside.aside
 
-                    //- logo
-                    .aside__logo
-                        .logo
-                            +image('content/logo.png','','logo__img')
+            //- aside
+            aside.header__aside.aside
 
+                //- logo
+                .aside__logo
+                    .logo
+                        +image('content/logo.png','','logo__img')
+
+                //- bottom
+                .aside__bottom
                     //- menu
                     .aside__nav
                         nav.nav
                             each i in nav
-                                .nav__item
+                                div(class=i.dopClass).nav__item
                                     a(href=i.href).nav__item-link=i.title
-                                    .nav__item-subnav
+                                    if i.list
+                                        .nav__item-subnav
+                                            .subnav
+                                                each j in i.list
+                                                    a(href=j.href class=j.dopClass).subnav__item= j.title
 
 
                     //- download
@@ -40,7 +45,7 @@ html(lang="ru")
                     .aside__socials
                         .socials
                             each i in ['fb','vk','insta']
-                                a('/').socials__item
+                                a(href='/').socials__item
                                     +icon(i, 'socials__item-svg')
 
                     //- reg
@@ -48,12 +53,19 @@ html(lang="ru")
 
 
 
+
+
+
+
+
+            //- header
+            header.header
                 //- top
                 .header__top
                     .container
                         .header__search
                             form.search
-                                input.search__input
+                                input(type='text' name='search' placeholder='Поиск по сайту').search__input
                                 button(type='submit').search__submit
                                     +image('icons/loop.png','','search__submit-img')
                         .header__phone
@@ -61,7 +73,7 @@ html(lang="ru")
                                 +image('icons/phone.png','','phone__icon')
                                 .phone__title +7 (495) 646-35-30
                         .header__button
-                            button(type='button').jsCallorder ОСТАВИТЬ ЗАЯВКУ
+                            button(type='button').button.jsCallorder ОСТАВИТЬ ЗАЯВКУ
 
 
             //- pages

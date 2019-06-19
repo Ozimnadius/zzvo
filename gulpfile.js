@@ -29,12 +29,14 @@ const moduleJS = [
 const vendorJs = [
     'node_modules/jquery/dist/jquery.js',
     'node_modules/jquery.maskedinput/src/jquery.maskedinput.js',
+    'node_modules/selectize/dist/js/standalone/selectize.js',
 ];
 
 
 const vendorCss = [
     'node_modules/font-awesome/css/font-awesome.css',
     'node_modules/normalize.css/normalize.css',
+    'node_modules/selectize/dist/css/selectize.default.css',
 ];
 
 

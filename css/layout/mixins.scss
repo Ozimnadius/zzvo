@@ -1,5 +1,6 @@
 //variables
 $vh: 1080;
+$vw: 1920;
 
 $break_lg: 1199.99px;
 $break_md: 991.99px;
@@ -49,6 +50,10 @@ $break_xs: 575.99px;
   @return $size/$vh *100*1vh;
 }
 
+@function vw($size) {
+  @return $size/$vw *100*1vw;
+}
+
 @mixin content() {
   ul {
     margin: 1em 0;
@@ -77,8 +82,20 @@ $break_xs: 575.99px;
     margin: 2.33em 0;
   }
   p {
-    margin: 1em 0;
+    font-size: 20px;
+    line-height: lh(20,35);
+    margin-bottom: 15px;
+    &:last-child{
+      margin-bottom: 0;
+    }
   }
+  a{
+    font-size: 20px;
+    line-height: lh(20,35);
+    color: $blue2;
+    text-decoration: underline;
+  }
+
 }
 
 @mixin headers() {

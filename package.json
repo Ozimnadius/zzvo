@@ -30,6 +30,7 @@
     "jquery": "^3.2.1",
     "jquery.maskedinput": "^1.4.1",
     "normalize.css": "^7.0.0",
+    "selectize": "^0.12.6",
     "smart-grid": "^2.1.2",
     "swiper": "^4.4.1"
   }
