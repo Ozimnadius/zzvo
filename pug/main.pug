@@ -1,0 +1,101 @@
+include common/_mixins
+include common/_settings
+block variables
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        meta(content="ie=edge" http-equiv="x-ua-compatible")
+        meta(content="width=device-width, initial-scale=1" name="viewport")
+
+        title #{title}
+        link(rel='stylesheet' href='css/vendor.min.css')
+        link(rel='stylesheet' href='css/main.css')
+    body
+        .wrapper
+            //- header
+            header.header
+                //- aside
+                aside.header__aside.aside
+
+                    //- logo
+                    .aside__logo
+                        .logo
+                            +image('content/logo.png','','logo__img')
+
+                    //- menu
+                    .aside__nav
+                        nav.nav
+                            each i in nav
+                                .nav__item
+                                    a(href=i.href).nav__item-link=i.title
+                                    .nav__item-subnav
+
+
+                    //- download
+                    a(href='/' download=true).aside__download СКАЧАТЬ ПРАЙС ЛИСТ
+
+                    //- socials
+                    .aside__socials
+                        .socials
+                            each i in ['fb','vk','insta']
+                                a('/').socials__item
+                                    +icon(i, 'socials__item-svg')
+
+                    //- reg
+                    .aside__reg Свидетельство о государственной регистрации: №611.995 Выдано Московской регистрационной палатой.
+
+
+
+                //- top
+                .header__top
+                    .container
+                        .header__search
+                            form.search
+                                input.search__input
+                                button(type='submit').search__submit
+                                    +image('icons/loop.png','','search__submit-img')
+                        .header__phone
+                            a(href='tel:+7(495)646-35-30').phone
+                                +image('icons/phone.png','','phone__icon')
+                                .phone__title +7 (495) 646-35-30
+                        .header__button
+                            button(type='button').jsCallorder ОСТАВИТЬ ЗАЯВКУ
+
+
+            //- pages
+            .page
+                block content
+
+            //- footer
+            footer.footer
+
+    .debug
+        div
+            div
+                div
+                div
+                div
+                div
+                div
+                div
+                div
+                div
+                div
+                div
+                div
+                div
+                div
+                div
+                div
+                div
+                div
+                div
+                div
+                div
+
+
+
+    script(src='js/vendor.min.js')
+    script(src='js/main.min.js')

@@ -1,0 +1,71 @@
+//variables
+//fonts
+$font: Arial, sans-serif;
+
+//colors
+$white7: #fefefe;
+$bg: #ffffff;
+$text: #333333;
+$grey5: #666666;
+$dark-blue: #507fa7;
+$grey8: #bbbbbb;
+$red: #ff0000;
+$grey3: #888888;
+$grey2: #999999;
+$black: #000000;
+$light-grey2: #e0e0e0;
+$grey: #9d9d9d;
+$yellow: #feb51a;
+$yellow3: #ffcd34;
+$dark: #3a353f;
+$white6: #e1e1e1;
+$yellow4: #fcbd39;
+$black2: #0a131c;
+$blue: #2677be;
+$white3: #f3f3f3;
+$white2: #f4f4f4;
+$light-grey2: #c1c1c1;
+$grey9: #a0a0a0;
+$light-grey3: #c2c2c2;
+$yellow2: #ffd200;
+$white: #e5e5e5;
+$grey4: #a2a2a2;
+$white5: #eaeaea;
+$red2: #fb5a5a;
+$grey6: #b4b4b4;
+$light-grey: #c5c5c5;
+$white6: #fcfcfc;
+$blue3: #3480cc;
+$blue4: #005097;
+$blue2: #3680cb;
+$white4: #ececec;
+$black3: #202020;
+$blue3: #0086fc;
+
+//another
+$font-size: 16px;
+
+//layout
+/*-----------------SECTION-MIXINS--------------------*/
+@import "layout/mixins";
+/*------------------------SECTION-FONTS----------------*/
+@import "layout/fonts";
+///*------------------------SECTION-SMART-GRID----------------*/
+//@import "layout/smart-grid";
+/*------------------------SECTION-ADJUSTMENT----------------*/
+@import "layout/adjustment";
+/*------------------------SECTION-COMMON----------------*/
+@import "layout/common";
+
+//sections
+/*------------------------SECTION-HEADER----------------*/
+@import "sections/header";
+/*------------------------SECTION-FOOTER---------------------*/
+@import "sections/footer";
+
+
+.debug {
+  //@include debug(rgba(0,0,0,0.3), 1px solid red);
+  //z-index: 100;
+  //top: 0;
+}

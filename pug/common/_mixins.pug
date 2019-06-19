@@ -1,0 +1,6 @@
+mixin icon(iconName, iconClass)
+  svg(class=`${iconClass}`)
+    use(xlink:href=`/images/icons/sprite.svg#${iconName}`)
+
+mixin image(imagePath, imageAlt, imageClass)
+  img(src=`/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
