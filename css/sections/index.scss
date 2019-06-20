@@ -166,10 +166,19 @@
   &__left {
     flex-basis: 360px;
     margin-right: 125px;
+    @include lg{
+      margin-right: 30px;
+      flex-basis: auto;
+      width: calc(35% - 30px);
+    };
   }
 
   &__right {
     flex-basis: 555px;
+    @include lg{
+      flex-basis: auto;
+      width: 65%;
+    };
   }
 
   &__main {

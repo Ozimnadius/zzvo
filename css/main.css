@@ -838,9 +838,26 @@ ul, ol {
   margin-right: 125px;
 }
 
+@media screen and (max-width: 1199.99px) {
+  .mnews__left {
+    margin-right: 30px;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+    width: calc(35% - 30px);
+  }
+}
+
 .mnews__right {
   -ms-flex-preferred-size: 555px;
   flex-basis: 555px;
+}
+
+@media screen and (max-width: 1199.99px) {
+  .mnews__right {
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+    width: 65%;
+  }
 }
 
 .mnews__main {
