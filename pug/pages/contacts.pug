@@ -1,0 +1,79 @@
+extends ../main
+
+block variables
+    - var title = 'Контакты'
+
+block content
+    main.contacts
+        .container.contacts__container
+
+            //- top
+            section.contacts__top
+                .contacts__title.title Контакты
+                a(href='/' download=true).contacts__download скачать реквизиты
+            //- list
+            section.contacts__list
+                .row
+                    each i in contacts
+                        .contacts__item
+                            .contacts__item-title= i.title
+                            .contacts__item-list
+                                each j in i.list
+                                    .contact
+                                        .contact__img
+                                            +icon(j.pic,'contact__svg')
+                                        if j.href
+                                            a(href=j.href).contact__link
+                                                !=j.val
+                                        else
+                                            .contact__link
+                                                !=j.val
+            //- warn
+            section.contacts__warn
+                span(style='color:#ff0000') !&nbsp;
+                span Если Вы хотите приехать вне рабочее время, просим сообщить менеджеру, предварительно позвонив.
+            //- bottom
+            section.contacts__bottom
+                form.contacts__form
+                    .contacts__form-title Для оперативной связи с нашими менеджерами вы можете воспользоваться формой ниже.
+                    .contacts__form-req Поля помеченные * - обязательны к заполнению
+                    .row
+                        .contacts__left
+                            label.contacts__field
+                                .contacts__field-label
+                                    |ФИО
+                                    span.req *
+                                input(type='text' name='name').input.contacts__field-input
+                            label.contacts__field
+                                .contacts__field-label Организация
+                                input(type='text' name='company').input.contacts__field-input
+                            label.contacts__field
+                                .contacts__field-label
+                                    | E-mail
+                                    span.req *
+                                input(type='email' name='email').input.contacts__field-input
+                            label.contacts__field
+                                .contacts__field-label Телефон
+                                input(type='tel' name='tel').input.contacts__field-input
+
+
+                        .contacts__right
+                            label.contacts__field
+                                textarea(name='comments' placeholder='Сообщение:').input.input_area.contacts__field-input
+                        .contacts__buttons
+                            button(type='submit').button.contacts__submit ОТПРАВИТЬ
+        //- map
+        .map
+            .map__container.container
+                #map
+            .container
+                .map__coords Координаты для навигатора: 55.968255, 37.198219
+                a(target='_blank' href='https://yandex.ru/maps/?from=api-maps&l=map&ll=37.197529%2C55.968177&mode=routes&origin=jsapi_2_1_74&rtext=~55.968177%2C37.197529&rtt=auto&ruri=~ymapsbm1%3A%2F%2Fgeo%3Fll%3D37.198%252C55.968%26spn%3D0.001%252C0.001%26text%3D%25D0%25A0%25D0%25BE%25D1%2581%25D1%2581%25D0%25B8%25D1%258F%252C%2520%25D0%259C%25D0%25BE%25D1%2581%25D0%25BA%25D0%25B2%25D0%25B0%252C%2520%25D0%2597%25D0%25B5%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25BE%25D0%25B3%25D1%2580%25D0%25B0%25D0%25B4%252C%2520%25D0%2597%25D0%25B0%25D0%25B2%25D0%25BE%25D0%25B4%25D1%2581%25D0%25BA%25D0%25B0%25D1%258F%2520%25D1%2583%25D0%25BB%25D0%25B8%25D1%2586%25D0%25B0%252C%252025%25D1%25811&z=17').map__link открыть в навигаторе
+
+
+
+
+
+
+
+

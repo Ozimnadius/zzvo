@@ -1,0 +1,39 @@
+extends ../main
+
+block variables
+    - var title = 'О компании'
+
+block content
+    main.about
+        .container.about__container
+            //- top
+            section.about__top
+                .about__title.title О компании
+                a(href='/' download=true).about__download скачать реквизиты
+            section.about__bottom
+                //- desc
+                .about__desc
+                    .content
+                        p.
+                            Общество с ограниченной ответственностью <b>“Зеленоградский завод вентиляционного оборудования” (ООО “ЗЗВО”)</b> создано 27 января 2004 года (Свидетельство о государственной регистрации № 1047796039862, выдано Московской регистрационной палатой).
+
+                //- slider
+                .about__slider
+                    .swiper-container.about__slider-container
+                        .swiper-wrapper
+                            each i in [1,2,3]
+                                .swiper-slide
+                                    .about__slide
+                                        img(src='images/content/about/img.jpg').about__slide-img
+                    .swiper-pagination.about__pag
+
+                //- content
+                .about__content
+                    .content
+                        p Предприятие специализируется в области производства оборудования для вентиляции, воздухорегулирования и кондиционирования, поставок и обслуживания другого оборудования промышленного назначения.
+
+
+
+
+
+

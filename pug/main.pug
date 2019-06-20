@@ -20,7 +20,7 @@ html(lang="ru")
 
                 //- logo
                 .aside__logo
-                    .logo
+                    a(href='/').logo
                         +image('content/logo.png','','logo__img')
 
                 //- bottom
@@ -62,7 +62,11 @@ html(lang="ru")
             header.header
                 //- top
                 .header__top
-                    .container
+                    .container.header__container
+                        .header__logo
+                            a(href='/').logo
+                                +image('content/logo.png','','logo__img')
+
                         .header__search
                             form.search
                                 input(type='text' name='search' placeholder='Поиск по сайту').search__input
@@ -76,6 +80,9 @@ html(lang="ru")
                             button(type='button').button.jsCallorder ОСТАВИТЬ ЗАЯВКУ
 
 
+                        .header__mobile-button
+                            button(type='button').mobile-button
+                                +icon('menu', 'mobile-button__svg')
             //- pages
             .page
                 block content
@@ -110,4 +117,5 @@ html(lang="ru")
 
 
     script(src='js/vendor.min.js')
+    script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU' type='text/javascript')
     script(src='js/main.min.js')

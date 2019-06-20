@@ -1,0 +1,53 @@
+extends ../main
+
+block variables
+    - var title = 'Новости'
+
+block content
+    main.news
+        .container.news__container
+
+            //- top
+            section.news__top
+                .news__title.title Новости
+                .news__links
+                    a(href='news.html').news__link.active Март
+                    a(href='news.html').news__link Февраль
+                    a(href='news.html').news__link Январь
+
+            //- main
+            section.news__main
+                .row.news__row
+                    .news__left
+                        .news__img
+                            img(src='images/content/news/img.jpg').news__img-img
+                        .news__date 21 марта в 19:37
+
+                    .news__right
+                        .news__main-title.
+                            Новые цены <br> на продукцию
+                        .news__main-desc.
+                            С 19 сентября 2018 года изменяются цены
+                            на нашу продукцию. Вы можете скачать прайс
+                            в pdf формате с нашего сайта.
+                        a(href='/' download=true).news__main-download Скачать прайс
+
+            //- list
+            section.news__list
+                .row.news__list-row
+                    each i in [1,2,3]
+                        a(href='article.html').news__item
+                            .news__item-link Режим работы завода в мае 2017г. Производство и склад начинают работать с 10 мая 2017г.
+                            .news__item-date 20 марта в 10:00
+                .row.news__list-row
+                    each i in [1,2,3]
+                        a(href='article.html').news__item
+                            .news__item-link Режим работы завода в мае 2017г. Производство и склад начинают работать с 10 мая 2017г.
+                            .news__item-date 20 марта в 10:00
+
+
+
+
+
+
+

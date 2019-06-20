@@ -1,0 +1,144 @@
+.news{
+  padding-top: 220px;
+  background-color: $white2;
+  min-height: 100vh;
+  padding-bottom: 20px;
+
+  &__container {
+    max-width: 1530px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    margin-right: 60px;
+  }
+
+  &__links {
+    display: flex;
+  }
+  &__link {
+    width: 105px;
+    height: 44px;
+
+    border-radius: 4px;
+    border: 1px solid $light-grey;
+    font-size: 18px;
+    margin-right: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:last-child {
+      margin-right: 0;
+    }
+    &.active{
+      border-radius: 4px;
+      border: 1px solid $blue;
+      background-color: rgba($blue,.2);
+    }
+  }
+
+  &__row {
+    align-items: flex-start;
+  }
+
+  &__left,&__right{
+    width: calc(50% - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  &__left {
+    position: relative;
+  }
+
+  &__right {
+    padding-right: 80px;
+  }
+
+  &__img {
+    box-shadow: -1px 10px 31px 4px rgba(0, 0, 0, 0.28);
+    &-img {
+      display: block;
+    }
+  }
+
+  &__date {
+    background-color: $yellow;
+    color: $black;
+    padding: 10px 18px;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__main {
+    margin-bottom: 15px;
+
+    &-title {
+      color: $black;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+    &-desc {
+      color: $black;
+      line-height: lh(16,35);
+      margin-bottom: 15px;
+    }
+    &-download {
+      color: $blue2;
+      font-size: 20px;
+      text-decoration: underline;
+    }
+  }
+
+  &__list {
+    &-row {
+      padding: 35px 0;
+      border-bottom: 1px solid $light-grey2;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__item {
+    width: calc(100%/3 - 30px);
+    margin-left: 15px;
+    margin-right: 15px;
+
+    &:hover {
+      .news__item {
+        &-link {
+          text-decoration: none;
+          color: $text;
+        }
+        &-date {
+          background-color: #e3e3e3;
+        }
+      }
+    }
+
+    &-link {
+      color: $blue2;
+      line-height: lh(16,24);
+      text-decoration: underline;
+      margin-bottom: 40px;
+      display: block;
+      transition: .3s;
+    }
+
+    &-date {
+      background-color: #fff0d1;
+      padding: 10px 20px;
+      display: inline-block;
+      transition: .3s;
+    }
+  }
+}

@@ -11,16 +11,13 @@
   <body>
     <div class="wrapper">
       <aside class="header__aside aside">
-        <div class="aside__logo">
-          <div class="logo"><img class="logo__img" src="/images/content/logo.png" alt=""/>
-          </div>
-        </div>
+        <div class="aside__logo"><a class="logo" href="/"><img class="logo__img" src="/images/content/logo.png" alt=""/></a></div>
         <div class="aside__bottom">
           <div class="aside__nav">
             <nav class="nav">
-              <div class="active nav__item"><a class="nav__item-link" href="/">О компании</a>
+              <div class="active nav__item"><a class="nav__item-link" href="company.html">О компании</a>
                 <div class="nav__item-subnav">
-                  <div class="subnav"><a class="subnav__item" href="/">История компании</a><a class="subnav__item" href="/">Новости</a><a class="subnav__item" href="/">Карьера</a><a class="subnav__item" href="/">Акции</a>
+                  <div class="subnav"><a class="subnav__item" href="/">История компании</a><a class="subnav__item" href="news.html">Новости</a><a class="subnav__item" href="/">Карьера</a><a class="subnav__item" href="/">Акции</a>
                   </div>
                 </div>
               </div>
@@ -36,7 +33,7 @@
               </div>
               <div class="nav__item"><a class="nav__item-link" href="/">Проектировщикам</a>
               </div>
-              <div class="nav__item"><a class="nav__item-link" href="/">Контакты</a>
+              <div class="nav__item"><a class="nav__item-link" href="contacts.html">Контакты</a>
               </div>
             </nav>
           </div><a class="aside__download" href="/" download>СКАЧАТЬ ПРАЙС ЛИСТ</a>
@@ -58,7 +55,8 @@
       </aside>
       <header class="header">
         <div class="header__top">
-          <div class="container">
+          <div class="container header__container">
+            <div class="header__logo"><a class="logo" href="/"><img class="logo__img" src="/images/content/logo.png" alt=""/></a></div>
             <div class="header__search">
               <form class="search">
                 <input class="search__input" type="text" name="search" placeholder="Поиск по сайту">
@@ -71,6 +69,13 @@
             <div class="header__button">
               <button class="button jsCallorder" type="button">ОСТАВИТЬ ЗАЯВКУ</button>
             </div>
+            <div class="header__mobile-button">
+              <button class="mobile-button" type="button">
+                <svg class="mobile-button__svg">
+                  <use xlink:href="/images/icons/sprite.svg#menu"></use>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -81,171 +86,207 @@
               <div class="bread"><a class="bread__item" href="/">Главная</a><img class="bread__seporator" src="images/icons/seporator.png"><a class="bread__item" href="/">Продукция</a><img class="bread__seporator" src="images/icons/seporator.png"><a class="bread__item" href="/">Вентиляторы осевые</a><img class="bread__seporator" src="images/icons/seporator.png"><span class="bread__item bread__item_active">Вентилятор осевой ВО 25-188</span></div>
             </div>
             <div class="product__title">ВЕНТИЛЯТОРЫ ОСЕВЫЕ ДЛЯ ПОДПОРА ВОЗДУХА ВО 25-188</div>
-            <form class="product__form row">
-              <div class="product__left"><img class="product__img" src="images/content/product/img.jpg"></div>
-              <div class="product__right">
-                <div class="product__list">
-                  <div class="product__item">Цилиндрический корпус</div>
-                  <div class="product__item">Число лопаток – 12</div>
-                  <div class="product__item">Левого вращения</div>
-                  <div class="product__item">Прямой привод</div>
-                </div><a class="product__download" href="/" download>скачать описание во 25-188</a>
-                <div class="product__price">
-                  <div class="product__price-price">78006.04 руб.</div>
-                  <div class="product__price-count">
-                    <div class="count">
-                      <div class="count__left">
-                        <button class="count__button count__down" type="button">-</button>
-                        <input class="count__input" type="number" name="count" value="1" min="1">
-                        <button class="count__button count__up" type="button">+</button>
+            <form class="product__form">
+              <div class="row">
+                <div class="product__left"><img class="product__img" src="images/content/product/img.jpg"></div>
+                <div class="product__right">
+                  <div class="product__list">
+                    <div class="product__item">Цилиндрический корпус</div>
+                    <div class="product__item">Число лопаток – 12</div>
+                    <div class="product__item">Левого вращения</div>
+                    <div class="product__item">Прямой привод</div>
+                  </div><a class="product__download" href="/" download>скачать описание во 25-188</a>
+                  <div class="product__price">
+                    <div class="product__price-price">78006.04 руб.</div>
+                    <div class="product__price-count">
+                      <div class="count">
+                        <div class="count__left">
+                          <button class="count__button count__down" type="button">-</button>
+                          <input class="count__input" type="number" name="count" value="1" min="1">
+                          <button class="count__button count__up" type="button">+</button>
+                        </div>
+                        <div class="count__right">
+                          <button class="count__buy" type="button">
+                            <svg class="count__buy-svg">
+                              <use xlink:href="/images/icons/sprite.svg#cart"></use>
+                            </svg>
+                          </button>
+                        </div>
                       </div>
-                      <div class="count__right">
-                        <button class="count__buy" type="button">
-                          <svg class="count__buy-svg">
-                            <use xlink:href="/images/icons/sprite.svg#cart"></use>
-                          </svg>
-                        </button>
+                    </div>
+                  </div>
+                  <div class="product__buttons">
+                    <button class="product__order" type="button">ОФОРМИТЬ ЗАКАЗ</button>
+                    <button class="button product__callorder" type="button">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</button>
+                  </div>
+                </div>
+                <div class="product__params">
+                  <div class="params">
+                    <div class="param">
+                      <div class="param__label">Выберите тип двигателя:</div>
+                      <select class="param__val select" name="type">
+                        <option value="АИР132S4">АИР132S4</option>
+                        <option value="АИР132S5">АИР132S5</option>
+                        <option value="АИР132S6">АИР132S6</option>
+                      </select>
+                    </div>
+                    <div class="param">
+                      <div class="param__label">Выбрать типоразмер:</div>
+                      <div class="radios">
+                        <label class="radio">
+                          <input class="radio__input" type="radio" name="size" value="10"/>
+                          <div class="radio__fake">10</div>
+                        </label>
+                        <label class="radio">
+                          <input class="radio__input" type="radio" name="size" value="12"/>
+                          <div class="radio__fake">12</div>
+                        </label>
+                        <label class="radio">
+                          <input class="radio__input" type="radio" name="size" value="6"/>
+                          <div class="radio__fake">6</div>
+                        </label>
+                        <label class="radio">
+                          <input class="radio__input" type="radio" name="size" value="8"/>
+                          <div class="radio__fake">8</div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="param">
+                      <div class="param__label">Направляющий аппарат:</div>
+                      <select class="param__val select" name="rail">
+                        <option value="Без НА">Без НА</option>
+                        <option value="C НА">C НА</option>
+                      </select>
+                    </div>
+                    <div class="param">
+                      <div class="param__label">Направление вращения:</div>
+                      <select class="param__val select" name="axis">
+                        <option value="Параметр X">Параметр X</option>
+                        <option value="Параметр Y">Параметр Y</option>
+                        <option value="Параметр Z">Параметр Z</option>
+                      </select>
+                    </div>
+                    <div class="param">
+                      <div class="param__label">Выберите мощность привода:</div>
+                      <div class="radios">
+                        <label class="radio">
+                          <input class="radio__input" type="radio" name="power" value="7"/>
+                          <div class="radio__fake">7</div>
+                        </label>
+                        <label class="radio">
+                          <input class="radio__input" type="radio" name="power" value="2"/>
+                          <div class="radio__fake">2</div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="param">
+                      <div class="param__label">Теор. обороты на РК об/мин:</div>
+                      <div class="radios">
+                        <label class="radio">
+                          <input class="radio__input" type="radio" name="rpm" value="1000"/>
+                          <div class="radio__fake">1000</div>
+                        </label>
+                        <label class="radio">
+                          <input class="radio__input" type="radio" name="rpm" value="1500"/>
+                          <div class="radio__fake">1500</div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="param">
+                      <div class="param__label">Факт. обороты на РК об/мин:</div>
+                      <div class="radios">
+                        <label class="radio">
+                          <input class="radio__input" type="radio" name="rpm-fact" value="945"/>
+                          <div class="radio__fake">945</div>
+                        </label>
+                        <label class="radio">
+                          <input class="radio__input" type="radio" name="rpm-fact" value="1440"/>
+                          <div class="radio__fake">1440</div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="param">
+                      <div class="param__label">Мин. производ. м3/ч:</div>
+                      <div class="radios">
+                        <label class="radio">
+                          <input class="radio__input" type="radio" name="efficiency" value="20985"/>
+                          <div class="radio__fake">20985</div>
+                        </label>
+                        <label class="radio">
+                          <input class="radio__input" type="radio" name="efficiency" value="31978"/>
+                          <div class="radio__fake">31978</div>
+                        </label>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="product__buttons">
-                  <button class="product__order" type="button">ОФОРМИТЬ ЗАКАЗ</button>
-                  <button class="button product__callorder" type="button">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</button>
-                </div>
-              </div>
-              <div class="product__params">
-                <div class="params">
-                  <div class="param">
-                    <div class="param__label">Выберите тип двигателя:</div>
-                    <select class="param__val select" name="type">
-                      <option value="АИР132S4">АИР132S4</option>
-                      <option value="АИР132S5">АИР132S5</option>
-                      <option value="АИР132S6">АИР132S6</option>
-                    </select>
-                  </div>
-                  <div class="param">
-                    <div class="param__label">Выбрать типоразмер:</div>
-                    <div class="radios">
-                      <label class="radio">
-                        <input class="radio__input" type="radio" name="size" value="10"/>
-                        <div class="radio__fake">10</div>
-                      </label>
-                      <label class="radio">
-                        <input class="radio__input" type="radio" name="size" value="12"/>
-                        <div class="radio__fake">12</div>
-                      </label>
-                      <label class="radio">
-                        <input class="radio__input" type="radio" name="size" value="6"/>
-                        <div class="radio__fake">6</div>
-                      </label>
-                      <label class="radio">
-                        <input class="radio__input" type="radio" name="size" value="8"/>
-                        <div class="radio__fake">8</div>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="param">
-                    <div class="param__label">Направляющий аппарат:</div>
-                    <select class="param__val select" name="rail">
-                      <option value="Без НА">Без НА</option>
-                      <option value="C НА">C НА</option>
-                    </select>
-                  </div>
-                  <div class="param">
-                    <div class="param__label">Направление вращения:</div>
-                    <select class="param__val select" name="axis">
-                      <option value="Параметр X">Параметр X</option>
-                      <option value="Параметр Y">Параметр Y</option>
-                      <option value="Параметр Z">Параметр Z</option>
-                    </select>
-                  </div>
-                  <div class="param">
-                    <div class="param__label">Выберите мощность привода:</div>
-                    <div class="radios">
-                      <label class="radio">
-                        <input class="radio__input" type="radio" name="power" value="7"/>
-                        <div class="radio__fake">7</div>
-                      </label>
-                      <label class="radio">
-                        <input class="radio__input" type="radio" name="power" value="2"/>
-                        <div class="radio__fake">2</div>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="param">
-                    <div class="param__label">Теор. обороты на РК об/мин:</div>
-                    <div class="radios">
-                      <label class="radio">
-                        <input class="radio__input" type="radio" name="rpm" value="1000"/>
-                        <div class="radio__fake">1000</div>
-                      </label>
-                      <label class="radio">
-                        <input class="radio__input" type="radio" name="rpm" value="1500"/>
-                        <div class="radio__fake">1500</div>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="param">
-                    <div class="param__label">Факт. обороты на РК об/мин:</div>
-                    <div class="radios">
-                      <label class="radio">
-                        <input class="radio__input" type="radio" name="rpm-fact" value="945"/>
-                        <div class="radio__fake">945</div>
-                      </label>
-                      <label class="radio">
-                        <input class="radio__input" type="radio" name="rpm-fact" value="1440"/>
-                        <div class="radio__fake">1440</div>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="param">
-                    <div class="param__label">Мин. производ. м3/ч:</div>
-                    <div class="radios">
-                      <label class="radio">
-                        <input class="radio__input" type="radio" name="efficiency" value="20985"/>
-                        <div class="radio__fake">20985</div>
-                      </label>
-                      <label class="radio">
-                        <input class="radio__input" type="radio" name="efficiency" value="31978"/>
-                        <div class="radio__fake">31978</div>
-                      </label>
-                    </div>
+                <div class="product__desc">ВО 25-188-10 без НА, АИР132S4, ТИПОРАЗМЕР 10</div>
+                <div class="product__sws">
+                  <div class="sws">
+                    <button class="sw" type="button" data-id="1">Назначение</button>
+                    <button class="sw" type="button" data-id="2">Условия эксплуатации</button>
+                    <button class="sw active" type="button" data-id="3">Чертеж</button>
+                    <button class="sw" type="button" data-id="4">Размеры</button>
                   </div>
                 </div>
-              </div>
-              <div class="product__desc">ВО 25-188-10 без НА, АИР132S4, ТИПОРАЗМЕР 10</div>
-              <div class="product__sws">
-                <div class="sws">
-                  <button class="sw" type="button" data-id="1">Назначение</button>
-                  <button class="sw" type="button" data-id="2">Условия эксплуатации</button>
-                  <button class="sw active" type="button" data-id="3">Чертеж</button>
-                  <button class="sw" type="button" data-id="4">Размеры</button>
-                </div>
-              </div>
-              <div class="product__tabs">
-                <div class="tabs">
-                  <div class="tab" data-id="1">
-                    <div class="content">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus at autem consequatur consequuntur cumque, debitis delectus dolore doloribus eligendi esse excepturi exercitationem expedita facilis fugit hic id illo labore minus natus nihil nostrum officiis optio provident quae quaerat quam quia ratione rem saepe sapiente sunt tempore ut. A accusamus aperiam asperiores aut, beatae blanditiis cum dicta dolor, dolorem error est illum ipsam iste magnam natus nihil odio omnis possimus, quae quas qui quia quod quos repudiandae similique. Adipisci dolore odit recusandae suscipit velit. Aperiam eaque perferendis quo voluptatum! Ab aliquam consequatur deleniti dolores doloribus nemo qui quibusdam quisquam suscipit.</p>
+                <div class="product__tabs">
+                  <div class="tabs">
+                    <div class="tab" data-id="1">
+                      <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus at autem consequatur consequuntur cumque, debitis delectus dolore doloribus eligendi esse excepturi exercitationem expedita facilis fugit hic id illo labore minus natus nihil nostrum officiis optio provident quae quaerat quam quia ratione rem saepe sapiente sunt tempore ut. A accusamus aperiam asperiores aut, beatae blanditiis cum dicta dolor, dolorem error est illum ipsam iste magnam natus nihil odio omnis possimus, quae quas qui quia quod quos repudiandae similique. Adipisci dolore odit recusandae suscipit velit. Aperiam eaque perferendis quo voluptatum! Ab aliquam consequatur deleniti dolores doloribus nemo qui quibusdam quisquam suscipit.</p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="tab" data-id="2">
-                    <div class="content">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias assumenda at consequuntur est eum, excepturi fugit maxime molestiae nulla quae reiciendis? Aliquam in magni nobis perspiciatis voluptatum? Blanditiis delectus dolore esse illo iure. Animi, dolorum, eius fugiat in ipsa ipsum laborum natus nesciunt nostrum odit, officiis soluta ullam? Asperiores?</p>
+                    <div class="tab" data-id="2">
+                      <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias assumenda at consequuntur est eum, excepturi fugit maxime molestiae nulla quae reiciendis? Aliquam in magni nobis perspiciatis voluptatum? Blanditiis delectus dolore esse illo iure. Animi, dolorum, eius fugiat in ipsa ipsum laborum natus nesciunt nostrum odit, officiis soluta ullam? Asperiores?</p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="tab active" data-id="3">
-                    <div class="content"><img src="images/content/product/pic.jpg"></div>
-                  </div>
-                  <div class="tab" data-id="4">
-                    <div class="content">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequuntur doloribus earum, eius fugit, id illum iure iusto minus nostrum, officiis porro quisquam sed sit ut velit voluptatibus. Ad adipisci alias amet animi at debitis dicta doloribus earum eligendi esse explicabo id impedit in, incidunt iure laudantium magni maxime minima optio perspiciatis praesentium quaerat quam qui veritatis voluptates? Alias blanditiis, corporis doloribus, error esse facilis hic illo magni nihil non odit, officiis quisquam voluptate? Ab accusantium ad atque, consectetur corporis delectus earum eligendi error exercitationem facilis fuga harum incidunt libero maiores minima nam natus necessitatibus nihil nobis obcaecati omnis perspiciatis praesentium quae quas quibusdam repellendus reprehenderit sapiente tenetur veniam voluptas! At atque dicta labore officia repudiandae saepe voluptatum. Alias, culpa ea earum est et eveniet iure libero nihil non porro quas repellat sapiente sequi similique tempora tenetur, voluptatum? Est illum, libero mollitia neque quas reprehenderit similique temporibus? Delectus eaque fugit ipsum magnam maxime neque nobis, non quam reprehenderit voluptate. Ab animi aspernatur at commodi delectus eligendi eum explicabo, fuga illum impedit ipsum minus molestiae mollitia natus necessitatibus, nobis perspiciatis porro quae quia quisquam quo quod, voluptas! Ad commodi, debitis doloremque ea enim facilis fuga fugit maxime neque, obcaecati perferendis voluptatem!</p>
+                    <div class="tab active" data-id="3">
+                      <div class="content"><img src="images/content/product/pic.jpg"></div>
+                    </div>
+                    <div class="tab" data-id="4">
+                      <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequuntur doloribus earum, eius fugit, id illum iure iusto minus nostrum, officiis porro quisquam sed sit ut velit voluptatibus. Ad adipisci alias amet animi at debitis dicta doloribus earum eligendi esse explicabo id impedit in, incidunt iure laudantium magni maxime minima optio perspiciatis praesentium quaerat quam qui veritatis voluptates? Alias blanditiis, corporis doloribus, error esse facilis hic illo magni nihil non odit, officiis quisquam voluptate? Ab accusantium ad atque, consectetur corporis delectus earum eligendi error exercitationem facilis fuga harum incidunt libero maiores minima nam natus necessitatibus nihil nobis obcaecati omnis perspiciatis praesentium quae quas quibusdam repellendus reprehenderit sapiente tenetur veniam voluptas! At atque dicta labore officia repudiandae saepe voluptatum. Alias, culpa ea earum est et eveniet iure libero nihil non porro quas repellat sapiente sequi similique tempora tenetur, voluptatum? Est illum, libero mollitia neque quas reprehenderit similique temporibus? Delectus eaque fugit ipsum magnam maxime neque nobis, non quam reprehenderit voluptate. Ab animi aspernatur at commodi delectus eligendi eum explicabo, fuga illum impedit ipsum minus molestiae mollitia natus necessitatibus, nobis perspiciatis porro quae quia quisquam quo quod, voluptas! Ad commodi, debitis doloremque ea enim facilis fuga fugit maxime neque, obcaecati perferendis voluptatem!</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </form>
+            <div class="product__same">
+              <div class="product__same-title">Вас могут заинтересовать</div>
+              <div class="product__same-slider slider">
+                <button class="slider__button slider__prev" type="button">
+                  <svg class="slider__button-svg">
+                    <use xlink:href="/images/icons/sprite.svg#prev"></use>
+                  </svg>
+                </button>
+                <div class="swiper-container slider__container">
+                  <div class="swiper-wrapper slider__container">
+                    <div class="swiper-slide">
+                      <div class="slide">
+                        <div class="slide__img"><img class="slide__pic" src="images/content/product/1.jpg"></div><a class="slide__link" href="/">Специализированные вентиляторы</a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="slide">
+                        <div class="slide__img"><img class="slide__pic" src="images/content/product/2.jpg"></div><a class="slide__link" href="/">Крышные вентиляторы</a>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="slide">
+                        <div class="slide__img"><img class="slide__pic" src="images/content/product/3.jpg"></div><a class="slide__link" href="/">Канальные вентиляторы</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="slider__button slider__next" type="button">
+                  <svg class="slider__button-svg">
+                    <use xlink:href="/images/icons/sprite.svg#next"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
         </main>
       </div>
@@ -279,5 +320,6 @@
     </div>
   </div>
   <script src="js/vendor.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   <script src="js/main.min.js"></script>
 </html>

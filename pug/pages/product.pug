@@ -20,96 +20,115 @@ block content
             //- title
             .product__title ВЕНТИЛЯТОРЫ ОСЕВЫЕ ДЛЯ ПОДПОРА ВОЗДУХА ВО 25-188
 
-            //- row
-            form.product__form.row
-                //- left
-                .product__left
-                    img(src='images/content/product/img.jpg').product__img
+            //- form
+            form.product__form
+                .row
+                    //- left
+                    .product__left
+                        img(src='images/content/product/img.jpg').product__img
 
-                //- right
-                .product__right
-                    //- list
-                    .product__list
-                        each i in ['Цилиндрический корпус','Число лопаток – 12','Левого вращения','Прямой привод']
-                            .product__item= i
+                    //- right
+                    .product__right
+                        //- list
+                        .product__list
+                            each i in ['Цилиндрический корпус','Число лопаток – 12','Левого вращения','Прямой привод']
+                                .product__item= i
 
-                    //- download
-                    a(href='/' download=true).product__download скачать описание во 25-188
+                        //- download
+                        a(href='/' download=true).product__download скачать описание во 25-188
 
-                    //- price
-                    .product__price
-                        .product__price-price 78006.04 руб.
-                        .product__price-count
-                            .count
-                                .count__left
-                                    button(type='button').count__button.count__down -
-                                    input(type='number' name='count' value=1 min=1).count__input
-                                    button(type='button').count__button.count__up +
-                                .count__right
-                                    button(type='button').count__buy
-                                        +icon('cart', 'count__buy-svg')
+                        //- price
+                        .product__price
+                            .product__price-price 78006.04 руб.
+                            .product__price-count
+                                .count
+                                    .count__left
+                                        button(type='button').count__button.count__down -
+                                        input(type='number' name='count' value=1 min=1).count__input
+                                        button(type='button').count__button.count__up +
+                                    .count__right
+                                        button(type='button').count__buy
+                                            +icon('cart', 'count__buy-svg')
 
 
 
-                    //- buttons
-                    .product__buttons
-                        button(type='button').product__order ОФОРМИТЬ ЗАКАЗ
-                        button(type='button').button.product__callorder ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ
+                        //- buttons
+                        .product__buttons
+                            button(type='button').product__order ОФОРМИТЬ ЗАКАЗ
+                            button(type='button').button.product__callorder ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ
 
-                //- params
-                .product__params
-                    .params
-                        .param
-                            .param__label Выберите тип двигателя:
-                            +select(['АИР132S4','АИР132S5','АИР132S6'],'type')
-                        .param
-                            .param__label Выбрать типоразмер:
-                            +radios([10,12,6,8],'size')
-                        .param
-                            .param__label Направляющий аппарат:
-                            +select(['Без НА', 'C НА'],'rail')
-                        .param
-                            .param__label Направление вращения:
-                            +select(['Параметр X', 'Параметр Y', 'Параметр Z'],'axis')
-                        .param
-                            .param__label Выберите мощность привода:
-                            +radios([7, 2],'power')
-                        .param
-                            .param__label Теор. обороты на РК об/мин:
-                            +radios([1000, 1500],'rpm')
-                        .param
-                            .param__label Факт. обороты на РК об/мин:
-                            +radios([945, 1440],'rpm-fact')
-                        .param
-                            .param__label Мин. производ. м3/ч:
-                            +radios([20985, 31978],'efficiency')
+                    //- params
+                    .product__params
+                        .params
+                            .param
+                                .param__label Выберите тип двигателя:
+                                +select(['АИР132S4','АИР132S5','АИР132S6'],'type')
+                            .param
+                                .param__label Выбрать типоразмер:
+                                +radios([10,12,6,8],'size')
+                            .param
+                                .param__label Направляющий аппарат:
+                                +select(['Без НА', 'C НА'],'rail')
+                            .param
+                                .param__label Направление вращения:
+                                +select(['Параметр X', 'Параметр Y', 'Параметр Z'],'axis')
+                            .param
+                                .param__label Выберите мощность привода:
+                                +radios([7, 2],'power')
+                            .param
+                                .param__label Теор. обороты на РК об/мин:
+                                +radios([1000, 1500],'rpm')
+                            .param
+                                .param__label Факт. обороты на РК об/мин:
+                                +radios([945, 1440],'rpm-fact')
+                            .param
+                                .param__label Мин. производ. м3/ч:
+                                +radios([20985, 31978],'efficiency')
 
-                //- desc
-                .product__desc ВО 25-188-10 без НА, АИР132S4, ТИПОРАЗМЕР 10
+                    //- desc
+                    .product__desc ВО 25-188-10 без НА, АИР132S4, ТИПОРАЗМЕР 10
 
-                //- sws
-                .product__sws
-                    .sws
-                        button(type='button' data-id=1).sw Назначение
-                        button(type='button' data-id=2).sw Условия эксплуатации
-                        button(type='button' data-id=3).sw.active Чертеж
-                        button(type='button' data-id=4).sw Размеры
+                    //- sws
+                    .product__sws
+                        .sws
+                            button(type='button' data-id=1).sw Назначение
+                            button(type='button' data-id=2).sw Условия эксплуатации
+                            button(type='button' data-id=3).sw.active Чертеж
+                            button(type='button' data-id=4).sw Размеры
 
-                //- tabs
-                .product__tabs
-                    .tabs
-                        div(data-id=1).tab
-                            .content
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus at autem consequatur consequuntur cumque, debitis delectus dolore doloribus eligendi esse excepturi exercitationem expedita facilis fugit hic id illo labore minus natus nihil nostrum officiis optio provident quae quaerat quam quia ratione rem saepe sapiente sunt tempore ut. A accusamus aperiam asperiores aut, beatae blanditiis cum dicta dolor, dolorem error est illum ipsam iste magnam natus nihil odio omnis possimus, quae quas qui quia quod quos repudiandae similique. Adipisci dolore odit recusandae suscipit velit. Aperiam eaque perferendis quo voluptatum! Ab aliquam consequatur deleniti dolores doloribus nemo qui quibusdam quisquam suscipit.
-                        div(data-id=2).tab
-                            .content
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias assumenda at consequuntur est eum, excepturi fugit maxime molestiae nulla quae reiciendis? Aliquam in magni nobis perspiciatis voluptatum? Blanditiis delectus dolore esse illo iure. Animi, dolorum, eius fugiat in ipsa ipsum laborum natus nesciunt nostrum odit, officiis soluta ullam? Asperiores?
-                        div(data-id=3).tab.active
-                            .content
-                                img(src='images/content/product/pic.jpg')
-                        div(data-id=4).tab
-                            .content
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequuntur doloribus earum, eius fugit, id illum iure iusto minus nostrum, officiis porro quisquam sed sit ut velit voluptatibus. Ad adipisci alias amet animi at debitis dicta doloribus earum eligendi esse explicabo id impedit in, incidunt iure laudantium magni maxime minima optio perspiciatis praesentium quaerat quam qui veritatis voluptates? Alias blanditiis, corporis doloribus, error esse facilis hic illo magni nihil non odit, officiis quisquam voluptate? Ab accusantium ad atque, consectetur corporis delectus earum eligendi error exercitationem facilis fuga harum incidunt libero maiores minima nam natus necessitatibus nihil nobis obcaecati omnis perspiciatis praesentium quae quas quibusdam repellendus reprehenderit sapiente tenetur veniam voluptas! At atque dicta labore officia repudiandae saepe voluptatum. Alias, culpa ea earum est et eveniet iure libero nihil non porro quas repellat sapiente sequi similique tempora tenetur, voluptatum? Est illum, libero mollitia neque quas reprehenderit similique temporibus? Delectus eaque fugit ipsum magnam maxime neque nobis, non quam reprehenderit voluptate. Ab animi aspernatur at commodi delectus eligendi eum explicabo, fuga illum impedit ipsum minus molestiae mollitia natus necessitatibus, nobis perspiciatis porro quae quia quisquam quo quod, voluptas! Ad commodi, debitis doloremque ea enim facilis fuga fugit maxime neque, obcaecati perferendis voluptatem!
+                    //- tabs
+                    .product__tabs
+                        .tabs
+                            div(data-id=1).tab
+                                .content
+                                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus at autem consequatur consequuntur cumque, debitis delectus dolore doloribus eligendi esse excepturi exercitationem expedita facilis fugit hic id illo labore minus natus nihil nostrum officiis optio provident quae quaerat quam quia ratione rem saepe sapiente sunt tempore ut. A accusamus aperiam asperiores aut, beatae blanditiis cum dicta dolor, dolorem error est illum ipsam iste magnam natus nihil odio omnis possimus, quae quas qui quia quod quos repudiandae similique. Adipisci dolore odit recusandae suscipit velit. Aperiam eaque perferendis quo voluptatum! Ab aliquam consequatur deleniti dolores doloribus nemo qui quibusdam quisquam suscipit.
+                            div(data-id=2).tab
+                                .content
+                                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias assumenda at consequuntur est eum, excepturi fugit maxime molestiae nulla quae reiciendis? Aliquam in magni nobis perspiciatis voluptatum? Blanditiis delectus dolore esse illo iure. Animi, dolorum, eius fugiat in ipsa ipsum laborum natus nesciunt nostrum odit, officiis soluta ullam? Asperiores?
+                            div(data-id=3).tab.active
+                                .content
+                                    img(src='images/content/product/pic.jpg')
+                            div(data-id=4).tab
+                                .content
+                                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequuntur doloribus earum, eius fugit, id illum iure iusto minus nostrum, officiis porro quisquam sed sit ut velit voluptatibus. Ad adipisci alias amet animi at debitis dicta doloribus earum eligendi esse explicabo id impedit in, incidunt iure laudantium magni maxime minima optio perspiciatis praesentium quaerat quam qui veritatis voluptates? Alias blanditiis, corporis doloribus, error esse facilis hic illo magni nihil non odit, officiis quisquam voluptate? Ab accusantium ad atque, consectetur corporis delectus earum eligendi error exercitationem facilis fuga harum incidunt libero maiores minima nam natus necessitatibus nihil nobis obcaecati omnis perspiciatis praesentium quae quas quibusdam repellendus reprehenderit sapiente tenetur veniam voluptas! At atque dicta labore officia repudiandae saepe voluptatum. Alias, culpa ea earum est et eveniet iure libero nihil non porro quas repellat sapiente sequi similique tempora tenetur, voluptatum? Est illum, libero mollitia neque quas reprehenderit similique temporibus? Delectus eaque fugit ipsum magnam maxime neque nobis, non quam reprehenderit voluptate. Ab animi aspernatur at commodi delectus eligendi eum explicabo, fuga illum impedit ipsum minus molestiae mollitia natus necessitatibus, nobis perspiciatis porro quae quia quisquam quo quod, voluptas! Ad commodi, debitis doloremque ea enim facilis fuga fugit maxime neque, obcaecati perferendis voluptatem!
+
+            //- same
+            .product__same
+                .product__same-title Вас могут заинтересовать
+                .product__same-slider.slider
+                    button(type='button').slider__button.slider__prev
+                        +icon('prev','slider__button-svg')
+                    .swiper-container.slider__container
+                        .swiper-wrapper.slider__container
+                            each i,x in ['Специализированные вентиляторы', 'Крышные вентиляторы', 'Канальные вентиляторы']
+                                .swiper-slide
+                                    .slide
+                                        .slide__img
+                                            img(src='images/content/product/'+(x+1)+'.jpg').slide__pic
+                                        a(href='/').slide__link= i
+                    button(type='button').slider__button.slider__next
+                        +icon('next','slider__button-svg')
+
 
 
 

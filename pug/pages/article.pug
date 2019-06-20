@@ -1,0 +1,49 @@
+extends ../main
+
+block variables
+    - var title = 'Новые цены на продукцию\n'
+
+block content
+    main.article
+        .container.article__container
+            //- bread
+            .article__bread
+                .bread
+                    a(href='/').bread__item Главная
+                    img(src='images/icons/seporator.png').bread__seporator
+                    a(href='about.html').bread__item О Компании
+                    img(src='images/icons/seporator.png').bread__seporator
+                    a(href='news.html').bread__item Новости
+                    img(src='images/icons/seporator.png').bread__seporator
+                    span.bread__item.bread__item_active Новые цены на продукцию
+
+
+            //- title
+            .article__title Новые цены на продукцию
+
+            //- date
+            .article__date 21 марта в 19:37
+
+            //- img
+            .article__img
+                img(src='images/content/news/1.jpg').article__img-img
+
+            //- content
+            .article__content
+                .content
+                    p С 19 сентября 2018 года изменяются цены на нашу продукцию. Обновленный прайс-лист вы можете скачать с нашего сайта.
+
+            //- download
+            a(href='/' download=true).article__download Скачать прайс
+
+            //- list
+            .article__list
+                .article__list-title Новости прошлой недели
+                .row.article__list-row
+                    each i in [1,2,3]
+                        a(href='article.html').news__item
+                            .news__item-link Режим работы завода в мае 2017г. Производство и склад начинают работать с 10 мая 2017г.
+                            .news__item-date 20 марта в 10:00
+
+
+

@@ -2,10 +2,18 @@
 $vh: 1080;
 $vw: 1920;
 
+
+$break_xlg: 1919px;
 $break_lg: 1199.99px;
 $break_md: 991.99px;
 $break_sm: 767.99px;
 $break_xs: 575.99px;
+
+@mixin xlg () {
+  @media screen and (max-width: $break_xlg){
+    @content;
+  }
+}
 
 @mixin lg () {
   @media screen and (max-width: $break_lg){

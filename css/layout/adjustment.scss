@@ -44,6 +44,13 @@ body {
   width: 100%;
   padding-left: 490px;
   padding-right: 60px;
+  @include xlg{
+    padding-left: 417px;
+    padding-right: 40px;
+  };
+  @include lg{
+    padding: 0 40px;
+  };
 }
 
 .row {
@@ -60,6 +67,11 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+  transition: .3s;
+  &:hover{
+    color: $text;
+    text-decoration: none;
+  }
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -70,9 +82,13 @@ img {
   max-width: 100%;
 }
 
-input {
+input,textarea {
   border: none;
   font: inherit;
+  background: none;
+  &:active,&:focus{
+    background-color: #e9e9e9;
+  }
 }
 
 button {

@@ -11,16 +11,13 @@
   <body>
     <div class="wrapper">
       <aside class="header__aside aside">
-        <div class="aside__logo">
-          <div class="logo"><img class="logo__img" src="/images/content/logo.png" alt=""/>
-          </div>
-        </div>
+        <div class="aside__logo"><a class="logo" href="/"><img class="logo__img" src="/images/content/logo.png" alt=""/></a></div>
         <div class="aside__bottom">
           <div class="aside__nav">
             <nav class="nav">
-              <div class="active nav__item"><a class="nav__item-link" href="/">О компании</a>
+              <div class="active nav__item"><a class="nav__item-link" href="company.html">О компании</a>
                 <div class="nav__item-subnav">
-                  <div class="subnav"><a class="subnav__item" href="/">История компании</a><a class="subnav__item" href="/">Новости</a><a class="subnav__item" href="/">Карьера</a><a class="subnav__item" href="/">Акции</a>
+                  <div class="subnav"><a class="subnav__item" href="/">История компании</a><a class="subnav__item" href="news.html">Новости</a><a class="subnav__item" href="/">Карьера</a><a class="subnav__item" href="/">Акции</a>
                   </div>
                 </div>
               </div>
@@ -36,7 +33,7 @@
               </div>
               <div class="nav__item"><a class="nav__item-link" href="/">Проектировщикам</a>
               </div>
-              <div class="nav__item"><a class="nav__item-link" href="/">Контакты</a>
+              <div class="nav__item"><a class="nav__item-link" href="contacts.html">Контакты</a>
               </div>
             </nav>
           </div><a class="aside__download" href="/" download>СКАЧАТЬ ПРАЙС ЛИСТ</a>
@@ -58,7 +55,8 @@
       </aside>
       <header class="header">
         <div class="header__top">
-          <div class="container">
+          <div class="container header__container">
+            <div class="header__logo"><a class="logo" href="/"><img class="logo__img" src="/images/content/logo.png" alt=""/></a></div>
             <div class="header__search">
               <form class="search">
                 <input class="search__input" type="text" name="search" placeholder="Поиск по сайту">
@@ -70,6 +68,13 @@
                 <div class="phone__title">+7 (495) 646-35-30</div></a></div>
             <div class="header__button">
               <button class="button jsCallorder" type="button">ОСТАВИТЬ ЗАЯВКУ</button>
+            </div>
+            <div class="header__mobile-button">
+              <button class="mobile-button" type="button">
+                <svg class="mobile-button__svg">
+                  <use xlink:href="/images/icons/sprite.svg#menu"></use>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -207,5 +212,6 @@
     </div>
   </div>
   <script src="js/vendor.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   <script src="js/main.min.js"></script>
 </html>

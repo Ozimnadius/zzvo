@@ -5,6 +5,12 @@
   width: 100%;
   background: $bg;
 
+  &__container{
+    @include lg{
+      padding-left: 0;
+    };
+  }
+
   &__top {
     box-shadow: -1px 12px 29px 3px rgba(0, 0, 0, 0.31);
     .container{
@@ -15,14 +21,39 @@
     }
   }
 
+  &__logo {
+    display: none;
+    @include lg{
+      display: block;
+      margin-right: 20px;
+    };
+  }
+
   &__search {
     width: calc(65% - 140px);
     margin-right: 20px;
+    @include xlg{
+      width: calc(50% - 140px);
+    };
+    @include lg{
+      display: none;
+    };
   }
 
   &__phone {
     margin-left: auto;
     margin-right: 20px;
+    @include lg{
+      margin-left: initial;
+    };
+  }
+
+  &__mobile-button {
+    display: none;
+    @include lg{
+      display: block;
+      margin-left: auto;
+    };
   }
 }
 
@@ -36,6 +67,9 @@
   left: 0;
   box-shadow: -1px 19px 41px 5px rgba(0, 0, 0, 0.14);
   background-color: $bg;
+  @include lg{
+    display: none;
+  };
 
   &__bottom {
     padding: 60px;
@@ -43,7 +77,7 @@
     display: flex;
     flex-direction: column;
     height: calc(100vh - 126px);
-    position: relative;
+    //position: relative;
   }
 
   &__nav {
@@ -56,6 +90,11 @@
     color: $blue;
     margin-bottom: 80px;
     display: block;
+    transition: .3s;
+    &:hover{
+      color: $text;
+      text-decoration: none;
+    }
   }
 
   &__socials {
@@ -111,7 +150,7 @@
     &-subnav {
       position: absolute;
       left: 100%;
-      top: 0;
+      top: 126px;
       display: none;
       width: 308px;
       height: 100%;
@@ -245,5 +284,12 @@
 
 
 
+  }
+}
+
+.mobile-button {
+  &__svg {
+    width: 60px;
+    height: 40px;
   }
 }
