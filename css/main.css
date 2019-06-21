@@ -316,6 +316,18 @@ ul, ol {
   }
 }
 
+@media screen and (max-width: 991.99px) {
+  .header__logo {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 767.99px) {
+  .header__logo {
+    width: auto;
+  }
+}
+
 @media screen and (max-width: 575.99px) {
   .header__logo {
     margin-right: 0;
@@ -350,7 +362,7 @@ ul, ol {
   }
 }
 
-@media screen and (max-width: 991.99px) {
+@media screen and (max-width: 767.99px) {
   .header__phone {
     display: none;
   }

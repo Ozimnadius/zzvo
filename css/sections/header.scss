@@ -33,6 +33,12 @@
       display: block;
       margin-right: 20px;
     };
+    @include md{
+      width: 200px;
+    };
+    @include sm{
+      width: auto;
+    };
     @include xs{
       margin-right: 0;
     };
@@ -55,7 +61,7 @@
     @include lg{
       margin-left: initial;
     };
-    @include md{
+    @include sm{
       display: none;
     };
   }
