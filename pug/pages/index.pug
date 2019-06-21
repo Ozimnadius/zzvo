@@ -78,5 +78,25 @@ block content
 
 
                     a(href='/').mnews__link читать все новости
+        //- footer
+        .section.index__footer
+            .ifooter
+                .container
+                    .ifooter__top
+                        .ifooter__phone
+                            a(href='tel:+7(495)646-35-30').phone
+                                +image('icons/phone.png','','phone__icon')
+                                .phone__title +7 (495) 646-35-30
+                        .ifooter__button
+                            button(type='button').button.jsCallback ОСТАВИТЬ ЗАЯВКУ
+                    .ifooter__socials
+                        .socials
+                            each i in ['fb','vk','insta']
+                                a(href='/').socials__item
+                                    +icon(i, 'socials__item-svg')
+                    .ifooter__reg Свидетельство о государственной регистрации: №611.995 Выдано Московской регистрационной палатой.
+
+
+
 
 

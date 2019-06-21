@@ -6,6 +6,9 @@ block variables
 block content
     main.product
         .container.product__container
+
+            //-back
+            button(type='button').product__back Вернуться назад
             //- bread
             .product__bread
                 .bread
@@ -54,18 +57,19 @@ block content
 
                         //- buttons
                         .product__buttons
-                            button(type='button').product__order ОФОРМИТЬ ЗАКАЗ
-                            button(type='button').button.product__callorder ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ
+                            button(type='button').product__order.jsCallback ОФОРМИТЬ ЗАКАЗ
+                            button(type='button').button.product__callorder.jsCallback ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ
+
 
                     //- params
                     .product__params
                         .params
                             .param
                                 .param__label Выберите тип двигателя:
-                                +select(['АИР132S4','АИР132S5','АИР132S6'],'type')
+                                +select(['АИР132S4', 'АИР132S5', 'АИР132S6'],'type')
                             .param
                                 .param__label Выбрать типоразмер:
-                                +radios([10,12,6,8],'size')
+                                +radios([10, 12, 6, 8],'size')
                             .param
                                 .param__label Направляющий аппарат:
                                 +select(['Без НА', 'C НА'],'rail')
@@ -95,6 +99,12 @@ block content
                             button(type='button' data-id=2).sw Условия эксплуатации
                             button(type='button' data-id=3).sw.active Чертеж
                             button(type='button' data-id=4).sw Размеры
+                        select(name='sws').sws-select
+                            option(value=1) Назначение
+                            option(value=2) Условия эксплуатации
+                            option(value=3) Чертеж
+                            option(value=4) Размеры
+
 
                     //- tabs
                     .product__tabs
@@ -112,6 +122,12 @@ block content
                                 .content
                                     p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequuntur doloribus earum, eius fugit, id illum iure iusto minus nostrum, officiis porro quisquam sed sit ut velit voluptatibus. Ad adipisci alias amet animi at debitis dicta doloribus earum eligendi esse explicabo id impedit in, incidunt iure laudantium magni maxime minima optio perspiciatis praesentium quaerat quam qui veritatis voluptates? Alias blanditiis, corporis doloribus, error esse facilis hic illo magni nihil non odit, officiis quisquam voluptate? Ab accusantium ad atque, consectetur corporis delectus earum eligendi error exercitationem facilis fuga harum incidunt libero maiores minima nam natus necessitatibus nihil nobis obcaecati omnis perspiciatis praesentium quae quas quibusdam repellendus reprehenderit sapiente tenetur veniam voluptas! At atque dicta labore officia repudiandae saepe voluptatum. Alias, culpa ea earum est et eveniet iure libero nihil non porro quas repellat sapiente sequi similique tempora tenetur, voluptatum? Est illum, libero mollitia neque quas reprehenderit similique temporibus? Delectus eaque fugit ipsum magnam maxime neque nobis, non quam reprehenderit voluptate. Ab animi aspernatur at commodi delectus eligendi eum explicabo, fuga illum impedit ipsum minus molestiae mollitia natus necessitatibus, nobis perspiciatis porro quae quia quisquam quo quod, voluptas! Ad commodi, debitis doloremque ea enim facilis fuga fugit maxime neque, obcaecati perferendis voluptatem!
 
+
+                    //- buttons
+                    .product__btns
+                        button(type='button').product__order.jsCallback ОФОРМИТЬ ЗАКАЗ
+                        button(type='button').button.product__callorder.jsCallback ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ
+
             //- same
             .product__same
                 .product__same-title Вас могут заинтересовать
@@ -124,7 +140,7 @@ block content
                                 .swiper-slide
                                     .slide
                                         .slide__img
-                                            img(src='images/content/product/'+(x+1)+'.jpg').slide__pic
+                                            img(src='images/content/product/' + (x + 1) + '.jpg').slide__pic
                                         a(href='/').slide__link= i
                     button(type='button').slider__button.slider__next
                         +icon('next','slider__button-svg')

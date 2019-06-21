@@ -2,6 +2,15 @@
   padding-top: 220px;
   background-color: $white2;
   padding-bottom: 70px;
+  @include md{
+    padding-top: 160px;
+  };
+  @include sm{
+    padding-top: 90px;
+  };
+  @include xs{
+    padding-bottom: 30px;
+  };
 
   &__container {
     max-width: 1530px;
@@ -13,6 +22,11 @@
     display: flex;
     align-items: flex-end;
     margin-bottom: 90px;
+    @include xs{
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    };
   }
 
   &__title {
@@ -20,6 +34,9 @@
     //font-weight: 600;
     margin-right: 70px;
     line-height: 0.8;
+    @include xs{
+      margin-bottom: 20px;
+    };
   }
 
   &__download{
@@ -28,6 +45,9 @@
     font-weight: bold;
     text-decoration: underline;
     text-transform: uppercase;
+    @include sm{
+      font-size: 16px;
+    };
   }
 
   &__item {
@@ -35,12 +55,28 @@
     margin-right: 15px;
     margin-left: 15px;
     margin-bottom: 70px;
+    @include md{
+      margin-bottom: 30px;
+    };
+    @include sm{
+      width: calc(100%/2 - 30px);
+    };
+    @include xs{
+      width: calc(100%/1 - 30px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    };
 
     &-title {
       color: $black;
       font-size: 20px;
       font-weight: bold;
       margin-bottom: 25px;
+      @include md{
+        font-size: 16px;
+        margin-bottom: 10px;
+      };
     }
   }
 
@@ -49,11 +85,20 @@
     text-align: center;
     padding: 20px;
     margin-bottom: 35px;
+    @include xs{
+      margin-left: -20px;
+      margin-right: -20px;
+      margin-bottom: 20px;
+    };
   }
 
   &__bottom {
     border-top: 2px solid $light-grey3;
     padding-top: 50px;
+    @include xs{
+      padding-top: 0;
+      border-top: none;
+    };
   }
 
   &__form {
@@ -73,6 +118,14 @@
     width: calc(50% - 30px);
     margin-left: 15px;
     margin-right: 15px;
+    @include sm{
+      width: calc(100% - 30px);
+    };
+  }
+  &__left {
+    @include sm{
+      margin-bottom: 15px;
+    };
   }
 
   &__buttons {
@@ -88,6 +141,9 @@
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    @include xs{
+      flex-wrap: wrap;
+    };
 
     &:last-child{
       margin-bottom: 0;
@@ -114,6 +170,17 @@
     padding-left: 28px;
   };
 
+  &:hover {
+    .contact{
+      &__svg {
+        fill: $blue;
+      }
+      &__link {
+        color: $blue;
+      }
+    }
+  }
+
   &:last-child{
     margin-bottom: 0;
   }
@@ -135,12 +202,17 @@
   &__svg {
     max-width: 100%;
     max-height: 100%;
+    transition: .3s;
   }
 
   &__link {
     font-size: 18px;
+    transition: .3s;
     @include xlg{
       font-size: 16px;
+    };
+    @include md{
+      font-size: 14px;
     };
   }
 }
@@ -172,11 +244,22 @@
     padding-left: 377px;
     padding-right: 0;
     margin-bottom: 45px;
+    @include lg{
+      padding-left: 0;
+    };
   }
 
   &__coords{
     font-size: 20px;
     margin-bottom: 35px;
+    @include sm{
+      font-size: 18px;
+      margin-bottom: 15px;
+    };
+    @include xs{
+      font-size: 14px;
+      margin-bottom: 10px;
+    };
   }
 
   &__link {
@@ -185,6 +268,9 @@
     font-weight: bold;
     text-decoration: underline;
     text-transform: uppercase;
+    @include xs{
+      font-size: 12px;
+    };
   }
 }
 

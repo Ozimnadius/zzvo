@@ -3,6 +3,15 @@
   background-color: $white2;
   min-height: 100vh;
   padding-bottom: 70px;
+  @include md{
+    padding-top: 160px;
+  };
+  @include sm{
+    padding-top: 90px;
+  };
+  @include xs{
+    padding-bottom: 40px;
+  };
 
   &__container {
     max-width: 1530px;
@@ -10,6 +19,9 @@
 
   &__bread {
     margin-bottom: 40px;
+    @include xs{
+      display: none;
+    };
   }
 
   &__title {
@@ -27,6 +39,11 @@
 
   &__img {
     margin-bottom: 30px;
+    @include xs{
+      margin-left: -20px;
+      margin-right: -20px;
+      margin-bottom: 20px;
+    };
     &-img {
       width: 100%;
       display: block;
@@ -35,8 +52,14 @@
 
   &__content {
     margin-bottom: 40px;
+    @include xs{
+      margin-bottom: 20px;
+    };
     P {
       font-size: 18px;
+      @include xs{
+        font-size: 16px;
+      };
     }
   }
 
@@ -46,11 +69,17 @@
     text-decoration: underline;
     margin-bottom: 70px;
     display: inline-block;
+    @include xs{
+      font-size: 16px;
+    };
   }
 
   &__list {
     padding-top: 35px;
     border-top: 1px solid $light-grey2;
+    @include xs{
+      padding-top: 20px;
+    };
 
     &-title {
       font-size: 30px;

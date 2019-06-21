@@ -43,7 +43,7 @@ block content
                                 .contacts__field-label
                                     |ФИО
                                     span.req *
-                                input(type='text' name='name').input.contacts__field-input
+                                input(type='text' name='name' required=true).input.contacts__field-input
                             label.contacts__field
                                 .contacts__field-label Организация
                                 input(type='text' name='company').input.contacts__field-input
@@ -51,7 +51,7 @@ block content
                                 .contacts__field-label
                                     | E-mail
                                     span.req *
-                                input(type='email' name='email').input.contacts__field-input
+                                input(type='email' name='email' required=true).input.contacts__field-input
                             label.contacts__field
                                 .contacts__field-label Телефон
                                 input(type='tel' name='tel').input.contacts__field-input

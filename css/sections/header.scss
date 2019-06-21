@@ -18,6 +18,12 @@
       align-items: center;
       flex-wrap: wrap;
       height: 126px;
+      @include md{
+        height: 100px;
+      };
+      @include sm{
+        height: 58px;
+      };
     }
   }
 
@@ -26,6 +32,9 @@
     @include lg{
       display: block;
       margin-right: 20px;
+    };
+    @include xs{
+      margin-right: 0;
     };
   }
 
@@ -45,6 +54,15 @@
     margin-right: 20px;
     @include lg{
       margin-left: initial;
+    };
+    @include md{
+      display: none;
+    };
+  }
+
+  &__button {
+    @include xs{
+      display: none;
     };
   }
 
@@ -68,8 +86,36 @@
   box-shadow: -1px 19px 41px 5px rgba(0, 0, 0, 0.14);
   background-color: $bg;
   @include lg{
-    display: none;
+    left: initial;
+    right: -500px;
+    width: 320px;
+    transition: .3s;
+    min-height: 100vh;
   };
+  &.active{
+    right: 0;
+  }
+
+  &__close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: none;
+    @include lg{
+      display: block;
+    };
+
+    &-svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  &__logo {
+    @include lg{
+      display: none;
+    };
+  }
 
   &__bottom {
     padding: 60px;
@@ -78,10 +124,22 @@
     flex-direction: column;
     height: calc(100vh - 126px);
     //position: relative;
+    @include lg{
+      min-height: 100vh;
+      padding: 40px;
+      height: 100vh;
+      overflow-y: auto;
+    };
+    @include xs{
+      padding: 30px 20px;
+    };
   }
 
   &__nav {
     margin-bottom: 80px;
+    @include lg{
+      margin-bottom: 30px;
+    };
   }
 
   &__download {
@@ -91,6 +149,10 @@
     margin-bottom: 80px;
     display: block;
     transition: .3s;
+    @include lg{
+      margin-top: auto;
+      margin-bottom: 20px;
+    };
     &:hover{
       color: $text;
       text-decoration: none;
@@ -99,12 +161,21 @@
 
   &__socials {
     margin-bottom: 20px;
+    @include xs{
+      margin-bottom: 0;
+    };
   }
 
   &__reg {
     margin-top: auto;
     color: $grey2;
     font-size: 12px;
+    @include lg{
+      margin-top: initial;
+    };
+    @include xs{
+      display: none;
+    };
   }
 }
 
@@ -115,12 +186,22 @@
   height: 126px;
   display: flex;
   align-items: center;
+  @include md{
+    height: 100px;
+  };
+  @include sm{
+    width: 252px;
+    height: 58px;
+    padding: 10px 25px;
+  };
 }
 
 .nav {
 
   &__item {
-
+    @include lg{
+      margin-bottom: 20px;
+    };
 
     &:hover {
       .nav__item-link{
@@ -128,10 +209,11 @@
       }
       .nav__item-subnav{
         display: block;
+        @include lg{
+          display: none;
+        };
       }
     }
-
-
 
     &.active {
       .nav__item-link {
@@ -145,6 +227,13 @@
       padding-top: 25px;
       padding-bottom: 25px;
       display: block;
+      @include lg{
+        padding: 0;
+        margin-bottom: 15px;
+      };
+      @include xs{
+        font-size: 16px;
+      };
     }
 
     &-subnav {
@@ -164,6 +253,14 @@
         width: 90px;
         height: 100%;
       }
+      @include lg{
+        position: static;
+        left: initial;
+        top: initial;
+        height: auto;
+        width: auto;
+        background: none;
+      };
     }
   }
 }
@@ -245,6 +342,10 @@
   padding-top: 67.5px;
   padding-bottom: 30px;
   padding-right: 30px;
+  @include lg{
+    padding: 0;
+    padding-left: 25px;
+  };
 
   &__item {
     display: block;
@@ -258,6 +359,18 @@
     transition: .3s;
     padding-top: 22.5px;
     padding-bottom: 22.5px;
+    @include lg{
+      padding: 0;
+      padding-left: 10px;
+      margin-bottom: 15px;
+      color: #777777;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    };
+    @include xs{
+      font-size: 14px;
+    };
 
     &:before {
       content: '';
@@ -269,6 +382,12 @@
       width: 67px;
       background-color: $white;
       transition: .3s;
+      @include lg{
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        top: 8px;
+      };
     }
 
     //&:last-child{
@@ -289,7 +408,7 @@
 
 .mobile-button {
   &__svg {
-    width: 60px;
-    height: 40px;
+    width: 40px;
+    height: 30px;
   }
 }

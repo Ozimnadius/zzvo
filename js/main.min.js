@@ -1,4 +1,12 @@
 $('.select').selectize();
+$('.sws-select').selectize({
+    onChange: function (value) {
+        console.log(value);
+        let tab = $('.tab[data-id=' + value + ']');
+        $('.tab').removeClass('active');
+        tab.addClass('active');
+    }
+});
 
 function Switches(prop) {
     this.sws = document.querySelector(prop.sws);
@@ -84,7 +92,7 @@ function Switches(prop) {
 }
 
 $(function () {
-    if(document.querySelector('.sws')) {
+    if (document.querySelector('.sws')) {
         let switches = new Switches({
             sws: '.sws',
             sw: '.sw',
@@ -103,6 +111,13 @@ $(function () {
         navigation: {
             nextEl: '.slider__next',
             prevEl: '.slider__prev',
+        },
+        breakpoints: {
+            // when window width is <= 768px
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            }
         }
     });
 
@@ -113,6 +128,7 @@ $(function () {
         pagination: {
             el: '.about__pag',
         },
+
     });
 
 
@@ -136,10 +152,74 @@ $(function () {
     function getCount() {
         return parseInt(countInput.val());
     }
+
+    let aside = $('.aside');
+    $('.mobile-button').on('click', function (e) {
+        e.preventDefault();
+        aside.addClass('active');
+    });
+    $('.aside__close').on('click', function (e) {
+        e.preventDefault();
+        aside.removeClass('active');
+    });
+
+    if ($(window).width() < 1200) {
+        $('.nav__item-link').on('click', function (e) {
+            let $this = $(this),
+                subnav = $this.next();
+
+            if (subnav.length > 0) {
+                e.preventDefault();
+                subnav.slideToggle(300);
+            }
+        });
+    }
+
+    $('.product__back').on('click', function (e) {
+        history.back();
+    });
+
+    let popup = $('.popup'),
+        popupWrapper = popup.find('.popup__wrapper');
+
+    $('.jsCallback').on('click', function (e) {
+        let $this = $(this),
+            template = $(document.querySelector('#callback').content),
+            html = template.find('.callback').clone();
+
+        popupWrapper.html(html);
+        popup.addClass('active');
+    });
+
+    $('body').on('submit', '.form', function (e) {
+        e.preventDefault();
+        let template = $(document.querySelector('#success').content),
+            html = template.find('.form__success').clone();
+        $('.form').append(html);
+    });
+
+    popup.on('click', function (e) {
+        let target = $(e.target);
+
+        if (target.closest('.popup__wrapper').length === 0){
+            popup.removeClass('active');
+        }
+    });
+
+    $('body').on('click', '.form__close', function (e) {
+        e.preventDefault();
+        popup.removeClass('active');
+    });
+
+    $('body').on('change','.fz__input', function (e) {
+
+        $('.form__button').toggleClass('disabled');
+    });
+
 });
 
 /*YANDEX*/
-$(function ()   {
+$(function () {
     ymaps.ready(init);
     var myMap,
         myPlacemark;
@@ -147,7 +227,7 @@ $(function ()   {
     function init() {
 
         if ($('#map').length) {
-            var center = [55.968176568776634,37.197528999999975];
+            var center = [55.968176568776634, 37.197528999999975];
 
             myMap = new ymaps.Map("map", {
                 center: center,
@@ -173,7 +253,7 @@ $(function ()   {
             });
 
 
-            myPlacemark1 = new ymaps.Placemark([55.968176568776634,37.197528999999975], {
+            myPlacemark1 = new ymaps.Placemark([55.968176568776634, 37.197528999999975], {
                     balloonContentHeader: "ZZVO.RU",
                     balloonContentBody: "Зеленоградский завод вентиляционного оборудования",
                     balloonContentFooter: "Россия, 124365, г.Зеленоград ул. Заводская д. 25 стр.1",
@@ -187,7 +267,6 @@ $(function ()   {
                     // iconImageOffset: [-45, -75]
                     // preset: 'islands#redGlyphIcon'
                 });
-
 
 
             myPin.add(myPlacemark1);

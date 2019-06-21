@@ -2,41 +2,124 @@
   padding-top: 220px;
   background-color: $white2;
   padding-bottom: 70px;
+  @include md {
+    padding-top: 160px;
+  }
+;
+  @include sm {
+    padding-top: 90px;
+  }
+;
+  @include xs {
+    padding-bottom: 30px;
+  }
+;
 
   &__container {
     max-width: 1530px;
     padding-right: 20px;
   }
 
+  &__back {
+    display: none;
+    color: $blue;
+    font-size: 14px;
+    text-decoration: underline;
+    margin-bottom: 17px;
+    @include xs {
+      display: inline-block;
+    }
+  ;
+  }
+
   &__bread {
     margin-bottom: 35px;
+    @include xs {
+      display: none;
+    }
+  ;
   }
 
   &__title {
     font-size: 30px;
     font-weight: bold;
-    line-height: lh(30,40);
+    line-height: lh(30, 40);
     margin-bottom: 30px;
+    @include sm {
+      font-size: 20px;
+    }
+  ;
   }
 
   &__form {
     border-bottom: 2px solid $grey6;
     margin-bottom: 45px;
+    @include xs {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  ;
+
+    .selectize-input {
+      padding: 12px 17px;
+      line-height: 21px;
+    }
+
+    .selectize-dropdown, .selectize-input, .selectize-input input {
+      color: $text;
+      font-family: Arial;
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    .selectize-control.single .selectize-input {
+      background-image: none;
+      background-color: rgba($blue, .2);
+      box-shadow: none;
+      border: 1px solid $blue;
+      border-radius: 4px;
+    }
+
+    .selectize-dropdown .option {
+      color: $blue3;
+      padding: 12px 17px;
+    }
+
+    .selectize-dropdown .active {
+      background-color: rgba($blue, .2);
+      color: $blue3;
+    }
   }
 
   &__left {
-    width: calc(100%*(4/11) - 30px);
+    width: calc(100% * (4 / 11) - 30px);
     margin-right: 15px;
     margin-left: 15px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    @include sm {
+      width: calc(100% - 30px);
+      margin-bottom: 20px;
+    }
+  ;
   }
 
   &__right {
-    width: calc(100%*(7/11) - 30px);
+    width: calc(100% * (7 / 11) - 30px);
     margin-right: 15px;
     margin-left: 15px;
+    @include sm {
+      width: calc(100% - 30px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  ;
+    @include xs {
+      align-items: initial;
+    }
+  ;
   }
 
   &__list {
@@ -48,12 +131,12 @@
     position: relative;
     margin-bottom: 12px;
 
-    &:last-child{
+    &:last-child {
       margin-bottom: 0;
     }
 
 
-    &:before{
+    &:before {
       content: '';
       display: block;
       width: 7px;
@@ -81,12 +164,20 @@
     flex-wrap: wrap;
     align-items: flex-end;
     margin-bottom: 55px;
+    @include xs {
+      margin-bottom: 25px;
+    }
+  ;
 
     &-price {
       color: $black;
       font-size: 30px;
       font-weight: bold;
       margin-right: 30px;
+      @include xs {
+        margin-bottom: 8px;
+      }
+    ;
     }
   }
 
@@ -95,6 +186,12 @@
     flex-wrap: wrap;
     margin-left: -9px;
     margin-right: -9px;
+    @include xs {
+      flex-direction: column;
+      align-items: center;
+    }
+  ;
+
   }
 
   &__order {
@@ -108,11 +205,22 @@
     color: $black;
     font-weight: bold;
     margin-right: 18px;
-    @include xlg{
+    transition: .3s;
+    &:hover{
+      opacity: .7;
+    }
+    @include xlg {
       margin-right: 9px;
       margin-left: 9px;
       margin-bottom: 20px;
-    };
+    }
+  ;
+    @include md {
+      width: 289px;
+      //height: 32px;
+      //margin-bottom: 15px;
+    }
+  ;
   }
 
   &__callorder {
@@ -129,6 +237,7 @@
     margin-top: 30px;
     margin-bottom: 20px;
     width: calc(100% - 30px);
+
   }
 
   &__desc {
@@ -142,9 +251,19 @@
     margin-left: 15px;
     width: calc(100% - 30px);
     margin-bottom: 30px;
+    @include sm {
+      font-size: 18px;
+    }
+  ;
+    @include xs {
+      margin-left: -20px;
+      margin-right: -20px;
+      width: calc(100% + 40px);
+    }
+  ;
   }
 
-  &__sws{
+  &__sws {
     margin-right: 15px;
     margin-left: 15px;
     width: calc(100% - 30px);
@@ -156,9 +275,30 @@
     margin-left: 15px;
     width: calc(100% - 30px);
     margin-bottom: 60px;
+    @include xs {
+      margin-bottom: 25px;
+    }
+  ;
   }
 
-  &__same{
+  &__btns {
+    margin-right: 15px;
+    margin-left: 15px;
+    width: calc(100% - 30px);
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    @include xs {
+      display: flex;
+    }
+  ;
+  }
+
+  &__same {
+    @include xs {
+      display: none;
+    }
+  ;
 
     &-title {
       font-size: 30px;
@@ -172,6 +312,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+
   &__item {
     color: $blue;
     font-size: 14px;
@@ -182,6 +323,7 @@
       color: $text;
     }
   }
+
   &__seporator {
     margin: 0 7px;
   }
@@ -224,6 +366,7 @@
   &__down {
     left: 0;
   }
+
   &__up {
     right: 0;
   }
@@ -231,7 +374,6 @@
   &__right {
     padding: 10px;
   }
-
 
 
   &__buy {
@@ -253,43 +395,22 @@
 .param {
   margin-left: 20px;
   margin-right: 20px;
-  width: calc(100%/4 - 40px);
+  width: calc(100% / 4 - 40px);
   margin-bottom: 30px;
+  @include md {
+    width: calc(100% / 2 - 40px);
+  }
+;
+  @include xs {
+    width: calc(100% - 40px);
+    margin-bottom: 10px;
+  }
+;
 
   &__label {
     color: $grey5;
     font-size: 14px;
     margin-bottom: 20px;
-  }
-
-  .selectize-input{
-    padding: 12px 17px;
-    line-height: 21px;
-  }
-
-  .selectize-dropdown, .selectize-input, .selectize-input input{
-    color: $text;
-    font-family: Arial;
-    font-size: 18px;
-    font-weight: 400;
-  }
-
-  .selectize-control.single .selectize-input{
-    background-image: none;
-    background-color: rgba($blue,.2);
-    box-shadow: none;
-    border: 1px solid $blue;
-    border-radius: 4px;
-  }
-
- .selectize-dropdown .option{
-    color: $blue3;
-   padding: 12px 17px;
-  }
-
-  .selectize-dropdown .active{
-    background-color: rgba($blue,.2);
-    color: $blue3;
   }
 
 }
@@ -303,15 +424,17 @@
   margin-right: 7px;
   cursor: pointer;
   margin-bottom: 7px;
-  &:last-child{
+
+  &:last-child {
     margin-right: 0;
   }
 
-  &__input{
+  &__input {
     display: none;
-    &:checked+.radio__fake {
+
+    &:checked + .radio__fake {
       border: 1px solid $blue;
-      background-color: rgba($blue,.2);
+      background-color: rgba($blue, .2);
     }
   }
 
@@ -321,45 +444,64 @@
     border-radius: 4px;
     border: 1px solid $light-grey;
     font-size: 18px;
-    display: flex;  align-items: center;
+    display: flex;
+    align-items: center;
     justify-content: center;
     padding: 0 10px;
   }
 }
 
-.sws{
+.sws {
   display: flex;
+  @include xs {
+    display: none;
+  }
+;
 }
 
-.sw{
+.sws-select {
+  display: none;
+  @include xs {
+    display: block;
+  }
+;
+}
+
+.sw {
   border-radius: 4px;
   border: 1px solid $light-grey;
   font-size: 18px;
   padding: 14px 40px;
   margin-right: 9px;
-  &:last-child{
+  @include md {
+    padding: 7px 20px;
+  }
+;
+
+  &:last-child {
     margin-right: 0;
   }
 
-  &.active{
+  &.active {
     border: 1px solid $blue;
-    background-color: rgba($blue,.2);
+    background-color: rgba($blue, .2);
   }
 }
 
 .tab {
   display: none;
-  &.active{
+
+  &.active {
     display: block;
   }
 }
 
-.slider{
+.slider {
   display: flex;
   align-items: center;
 
   &__button {
-    &-svg{
+    &-svg {
       width: 40px;
       height: 72px;
       fill: $blue;
@@ -369,14 +511,37 @@
   &__prev {
     margin-left: 10px;
     margin-right: 50px;
+    @include md {
+      margin-left: 0;
+      margin-right: 15px;
+    }
+  ;
   }
+
   &__next {
     margin-left: 50px;
     margin-right: 10px;
+    @include md {
+      margin-left: 15px;
+      margin-right: 0;
+    }
+  ;
   }
+
+  .swiper-slide-active {
+    img {
+      box-shadow: 0 0 34px 1px rgba(0, 0, 0, 0.1);
+    }
+  }
+
 }
 
-.slide{
+.slide {
+  &:hover {
+    img{
+      box-shadow: 0 0 34px 1px rgba(0, 0, 0, 0.1);
+    }
+  }
   &__img {
     display: flex;
     justify-content: center;
@@ -386,15 +551,22 @@
 
   &__pic {
     width: 100%;
+    transition: .3s;
   }
 
   &__link {
     color: $blue4;
     font-size: 22px;
-    line-height: lh(22,25);
+    line-height: lh(22, 25);
     text-decoration: underline;
-    @include xlg{
+    @include xlg {
       font-size: 18px;
-    };
+    }
+  ;
+  }
+
+  &__price {
+    font-weight: bold;
+    margin-top: 10px;
   }
 }

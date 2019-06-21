@@ -11,6 +11,9 @@ html {
   height: 100%;
   font-size: $font-size;
   box-sizing: border-box;
+  @include md{
+    font-size: 14px;
+  };
 ;
 }
 
@@ -50,6 +53,9 @@ body {
   };
   @include lg{
     padding: 0 40px;
+  };
+  @include md{
+    padding: 0 20px;
   };
 }
 

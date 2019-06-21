@@ -1,18 +1,24 @@
 .button {
   border-radius: 25px;
   border: 3px solid $yellow;
-  //background-color: $bg;
-
   color: $black;
   font-weight: bold;
-
-
   width: 241px;
   height: 50px;
   min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: .3s;
+  &:hover{
+    opacity: .7;
+  }
+  @include md{
+    //border-radius: 16px;
+    //height: 32px;
+    //min-height: 32px;
+    //width: 180px;
+  };
 
   &_wh {
     background-color: transparent;
@@ -24,4 +30,18 @@
   font-size: 60px;
   font-weight: 600;
   line-height: lh(60,70);
+  @include md{
+    font-size: 42px;
+  };
+  @include sm{
+    font-size: 32px;
+  };
+  @include xs{
+    font-size: 30px;
+  };
+}
+
+.disabled {
+  opacity: .5;
+  pointer-events: none;
 }

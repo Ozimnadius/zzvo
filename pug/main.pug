@@ -18,6 +18,10 @@ html(lang="ru")
             //- aside
             aside.header__aside.aside
 
+                //- close
+                button(type='button').aside__close
+                    +icon('close', 'aside__close-svg')
+
                 //- logo
                 .aside__logo
                     a(href='/').logo
@@ -77,7 +81,7 @@ html(lang="ru")
                                 +image('icons/phone.png','','phone__icon')
                                 .phone__title +7 (495) 646-35-30
                         .header__button
-                            button(type='button').button.jsCallorder ОСТАВИТЬ ЗАЯВКУ
+                            button(type='button').button.jsCallback ОСТАВИТЬ ЗАЯВКУ
 
 
                         .header__mobile-button
@@ -116,6 +120,44 @@ html(lang="ru")
 
 
 
+    .popup
+        .popup__wrapper
+
+    template#callback
+        .callback
+            form().callback__form.form
+                button(type='button').form__close Закрыть
+                .form__title Форма обратной связи
+                .form__fields
+                    .form__row.row
+                        .form__field.form__field_2
+                            input(type='text' name='name' placeholder='Ваше имя').input
+                        .form__field
+                            input(type='tel' name='tel' placeholder='Телефон' required=true).input
+                        .form__field
+                            input(type='email' name='email' placeholder='Email').input
+                        .form__field.form__field_2
+                            textarea(name='message' placeholder='Сообщение').input.input_area
+                .form__fz
+                    .fz
+                        label.fz__label
+                            input(type='checkbox' name='fz' checked=true).fz__input
+                            .fz__fake
+                            .fz__desc
+                                .fz__title Я даю согласие на обработку персональных данных.
+                                a(href='/').fz__link Прочитать пользовательское соглашение.
+
+                .form__buttons
+                    button(type='submit').form__button.button
+                        .button__title Заказать звонок
+                input(type='hidden' name='action' value='callback')
+
+
+    template#success
+        .form__success
+            button(type='button').form__close Закрыть
+            .form__success-title Спасибо за заявку
+            .form__success-subtitle Наш менеджер свяжется с Вами в ближайшее время.
     script(src='js/vendor.min.js')
     script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU' type='text/javascript')
     script(src='js/main.min.js')

@@ -49,7 +49,7 @@ $font-size: 16px;
 /*-----------------SECTION-MIXINS--------------------*/
 @import "layout/mixins";
 /*------------------------SECTION-FONTS----------------*/
-@import "layout/fonts";
+//@import "layout/fonts";
 ///*------------------------SECTION-SMART-GRID----------------*/
 //@import "layout/smart-grid";
 /*------------------------SECTION-ADJUSTMENT----------------*/
@@ -72,6 +72,10 @@ $font-size: 16px;
 @import "sections/news";
 /*-----------------SECTION-ARTICLE--------------------*/
 @import "sections/article";
+/*-----------------SECTION-CATALOG--------------------*/
+@import "sections/catalog";
+/*-----------------SECTION-POPUP--------------------*/
+@import "sections/popup";
 /*------------------------SECTION-FOOTER---------------------*/
 @import "sections/footer";
 

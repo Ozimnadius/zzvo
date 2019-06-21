@@ -1,0 +1,38 @@
+extends ../main
+
+block variables
+    - var title = 'Каталог'
+
+block content
+    main.catalog
+        .container.catalog__container
+
+            //-back
+            button(type='button').product__back Вернуться назад
+
+            //- bread
+            .catalog__bread
+                .bread
+                    a(href='/').bread__item Главная
+                    img(src='images/icons/seporator.png').bread__seporator
+                    span.bread__item.bread__item_active Каталог
+            //- top
+            .catalog__title.title Каталог
+
+            //-list
+            .catalog__list
+                .row
+                    each i in [1,2,3,1,2,3,1,2,3]
+                        a(href='product.html').catalog__item
+                            .slide
+                                .slide__img
+                                    img(src='images/content/product/' + i + '.jpg').slide__pic
+                                .slide__link.catalog__item-link
+                                    | Lorem ipsum dolor sit amet.
+                                .slide__price 99 999 руб.
+
+
+
+
+
+

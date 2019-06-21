@@ -11,6 +11,11 @@
   <body>
     <div class="wrapper">
       <aside class="header__aside aside">
+        <button class="aside__close" type="button">
+          <svg class="aside__close-svg">
+            <use xlink:href="/images/icons/sprite.svg#close"></use>
+          </svg>
+        </button>
         <div class="aside__logo"><a class="logo" href="/"><img class="logo__img" src="/images/content/logo.png" alt=""/></a></div>
         <div class="aside__bottom">
           <div class="aside__nav">
@@ -21,9 +26,9 @@
                   </div>
                 </div>
               </div>
-              <div class="nav__item"><a class="nav__item-link" href="/">Продукция</a>
+              <div class="nav__item"><a class="nav__item-link" href="catalog.html">Продукция</a>
                 <div class="nav__item-subnav">
-                  <div class="subnav"><a class="subnav__item" href="/">Вентиляторы крышные</a><a class="active subnav__item" href="/">Вентиляторы осевые</a><a class="subnav__item" href="/">Вентиляторы радиальные</a><a class="subnav__item" href="/">Гермолюки, Гермодвери</a><a class="subnav__item" href="/">Доп оборудование</a><a class="subnav__item" href="/">Заслонки воздушные</a><a class="subnav__item" href="/">Воздуховоды</a><a class="subnav__item" href="/">Сантехническое оборудование</a><a class="subnav__item" href="/">Узлы прохода</a>
+                  <div class="subnav"><a class="subnav__item" href="catalog.html">Вентиляторы крышные</a><a class="active subnav__item" href="catalog.html">Вентиляторы осевые</a><a class="subnav__item" href="catalog.html">Вентиляторы радиальные</a><a class="subnav__item" href="catalog.html">Гермолюки, Гермодвери</a><a class="subnav__item" href="catalog.html">Доп оборудование</a><a class="subnav__item" href="catalog.html">Заслонки воздушные</a><a class="subnav__item" href="catalog.html">Воздуховоды</a><a class="subnav__item" href="catalog.html">Сантехническое оборудование</a><a class="subnav__item" href="catalog.html">Узлы прохода</a>
                   </div>
                 </div>
               </div>
@@ -67,7 +72,7 @@
             <div class="header__phone"><a class="phone" href="tel:+7(495)646-35-30"><img class="phone__icon" src="/images/icons/phone.png" alt=""/>
                 <div class="phone__title">+7 (495) 646-35-30</div></a></div>
             <div class="header__button">
-              <button class="button jsCallorder" type="button">ОСТАВИТЬ ЗАЯВКУ</button>
+              <button class="button jsCallback" type="button">ОСТАВИТЬ ЗАЯВКУ</button>
             </div>
             <div class="header__mobile-button">
               <button class="mobile-button" type="button">
@@ -82,6 +87,7 @@
       <div class="page">
         <main class="product">
           <div class="container product__container">
+            <button class="product__back" type="button">Вернуться назад</button>
             <div class="product__bread">
               <div class="bread"><a class="bread__item" href="/">Главная</a><img class="bread__seporator" src="images/icons/seporator.png"><a class="bread__item" href="/">Продукция</a><img class="bread__seporator" src="images/icons/seporator.png"><a class="bread__item" href="/">Вентиляторы осевые</a><img class="bread__seporator" src="images/icons/seporator.png"><span class="bread__item bread__item_active">Вентилятор осевой ВО 25-188</span></div>
             </div>
@@ -116,8 +122,8 @@
                     </div>
                   </div>
                   <div class="product__buttons">
-                    <button class="product__order" type="button">ОФОРМИТЬ ЗАКАЗ</button>
-                    <button class="button product__callorder" type="button">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</button>
+                    <button class="product__order jsCallback" type="button">ОФОРМИТЬ ЗАКАЗ</button>
+                    <button class="button product__callorder jsCallback" type="button">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</button>
                   </div>
                 </div>
                 <div class="product__params">
@@ -228,6 +234,12 @@
                     <button class="sw active" type="button" data-id="3">Чертеж</button>
                     <button class="sw" type="button" data-id="4">Размеры</button>
                   </div>
+                  <select class="sws-select" name="sws">
+                    <option value="1">Назначение</option>
+                    <option value="2">Условия эксплуатации</option>
+                    <option value="3">Чертеж</option>
+                    <option value="4">Размеры</option>
+                  </select>
                 </div>
                 <div class="product__tabs">
                   <div class="tabs">
@@ -250,6 +262,10 @@
                       </div>
                     </div>
                   </div>
+                </div>
+                <div class="product__btns">
+                  <button class="product__order jsCallback" type="button">ОФОРМИТЬ ЗАКАЗ</button>
+                  <button class="button product__callorder jsCallback" type="button">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</button>
                 </div>
               </div>
             </form>
@@ -319,6 +335,57 @@
       </div>
     </div>
   </div>
+  <div class="popup">
+    <div class="popup__wrapper"></div>
+  </div>
+  <template id="callback">
+    <div class="callback">
+      <form class="callback__form form">
+        <button class="form__close" type="button">Закрыть</button>
+        <div class="form__title">Форма обратной связи</div>
+        <div class="form__fields">
+          <div class="form__row row">
+            <div class="form__field form__field_2">
+              <input class="input" type="text" name="name" placeholder="Ваше имя">
+            </div>
+            <div class="form__field">
+              <input class="input" type="tel" name="tel" placeholder="Телефон" required>
+            </div>
+            <div class="form__field">
+              <input class="input" type="email" name="email" placeholder="Email">
+            </div>
+            <div class="form__field form__field_2">
+              <textarea class="input input_area" name="message" placeholder="Сообщение"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="form__fz">
+          <div class="fz">
+            <label class="fz__label">
+              <input class="fz__input" type="checkbox" name="fz" checked>
+              <div class="fz__fake"></div>
+              <div class="fz__desc">
+                <div class="fz__title">Я даю согласие на обработку персональных данных.</div><a class="fz__link" href="/">Прочитать пользовательское соглашение.</a>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="form__buttons">
+          <button class="form__button button" type="submit">
+            <div class="button__title">Заказать звонок</div>
+          </button>
+        </div>
+        <input type="hidden" name="action" value="callback">
+      </form>
+    </div>
+  </template>
+  <template id="success">
+    <div class="form__success">
+      <button class="form__close" type="button">Закрыть</button>
+      <div class="form__success-title">Спасибо за заявку</div>
+      <div class="form__success-subtitle">Наш менеджер свяжется с Вами в ближайшее время.</div>
+    </div>
+  </template>
   <script src="js/vendor.min.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   <script src="js/main.min.js"></script>

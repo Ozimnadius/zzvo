@@ -90,18 +90,24 @@ $break_xs: 575.99px;
     margin: 2.33em 0;
   }
   p {
-    font-size: 20px;
+    font-size: rem(20px);
     line-height: lh(20,35);
     margin-bottom: 15px;
     &:last-child{
       margin-bottom: 0;
     }
+    @include xs{
+      font-size: 16px;
+    };
   }
   a{
-    font-size: 20px;
+    font-size: rem(20px);
     line-height: lh(20,35);
     color: $blue2;
     text-decoration: underline;
+    @include xs{
+      font-size: 16px;
+    };
   }
 
 }

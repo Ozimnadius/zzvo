@@ -1,0 +1,57 @@
+.catalog {
+  padding-top: 220px;
+  background-color: $white2;
+  min-height: 100vh;
+  padding-bottom: 70px;
+  @include md{
+    padding-top: 160px;
+  };
+  @include sm{
+    padding-top: 90px;
+  };
+  @include xs{
+    padding-bottom: 40px;
+  };
+
+  &__container {
+    max-width: 1530px;
+  }
+
+  &__bread {
+    margin-bottom: 40px;
+    @include xs{
+      display: none;
+    };
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  &__list {
+
+  }
+
+  &__item {
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100%/3 - 30px);
+    margin-bottom: 30px;
+    @include xs{
+      width: calc(100%/2 - 30px);
+    };
+    
+    &-link {
+      transition: .3s;
+    }
+    
+    &:hover {
+      .catalog__item-link {
+        text-decoration: none;
+        color: $text;
+      }
+    }
+  }
+}
