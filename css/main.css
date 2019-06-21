@@ -1514,6 +1514,12 @@ ul, ol {
   display: inline-block;
 }
 
+@media screen and (max-width: 575.99px) {
+  .product__download {
+    margin-bottom: 20px;
+  }
+}
+
 .product__price {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -157,6 +157,9 @@
     text-transform: uppercase;
     margin-bottom: 45px;
     display: inline-block;
+    @include xs{
+      margin-bottom: 20px;
+    };
   }
 
   &__price {
